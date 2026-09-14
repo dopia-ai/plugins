@@ -25,7 +25,7 @@ Capabilities, not specific tools. Use whatever the host provides.
 |---|---|---|
 | Fetch a public web page | product teardown, company checks | the skill cannot run |
 | Web search | finding channels and posts | degrade to known registries only |
-| A browser signed in as the operator | sources behind a session or rendered client-side | skip those lanes and say so in the output |
+| A browser the host provides | any page plain fetch cannot read | skip those lanes and say so in the output |
 | Write a local file | the report | print the report instead |
 | An artifact tool *(optional)* | publishing the list as a shareable page | stop after the local file |
 | A CRM tool *(optional)* | writing qualified rows as records | stop after the report |
@@ -35,20 +35,25 @@ Capabilities, not specific tools. Use whatever the host provides.
 - **Prospecting only.** Do not draft, send, connect, comment, follow, or message.
   The output is a list and a corpus. Judge this skill on list quality, never on
   reply rate.
-- **Public sources by default.** Marketplace reviews, support forums, trade
-  communities, company websites — pages anyone can load without an account. That
-  is where the evidence this skill needs actually lives, and it is the whole lane
-  unless the operator says otherwise.
+- **Public sources.** Marketplace reviews, support forums, trade communities,
+  company websites — pages a person can open without an account. That is where
+  the evidence this skill needs actually lives.
 - **Never handle credentials, never defeat a login wall.** Do not ask for, accept,
   store or type a password, and do not work around anything a site put in front
-  of its content. If a page will not load, that is a routing decision — take
-  another lane — not a problem to solve.
-- **A signed-in browser is the operator's own call, and read-only.** If they point
-  you at one, read pages at human pace and never act on a platform on anyone's
-  behalf: no sending, connecting, following, commenting, or scraping at machine
-  speed. Automated collection conflicts with the terms of most platforms, and
-  running inside someone's own session is the conservative end of that rather
-  than an exemption. Say so in the output header when that lane was used.
+  of its content to keep people out. If a page is gated, take another lane.
+- **If the host gives you a browser, it is a normal way to read a page, not a
+  last resort.** Claude in Chrome on the desktop app, the browser tools in Claude
+  Code — when one is available, use it the moment a plain fetch comes back empty
+  or 403. Plenty of ordinary public pages are simply unreadable without one:
+  marketplace reviews behind bot protection, job boards that render client-side.
+  Reaching for it needs no permission, and `references/extraction.md` has the
+  escalation. **Do not log a lane as "not available" when a browser is sitting
+  right there** — that is the most common way this skill under-delivers.
+- **Reading only, at human pace.** Never act on a platform on anyone's behalf: no
+  sending, connecting, following, commenting, or collecting at machine speed.
+  Automated collection conflicts with the terms of most platforms, and reading
+  inside a session someone already opened is the conservative end of that rather
+  than an exemption. Say in the output header when a browser was used.
 - **One question, maximum.** Ask the operator only if two readings of the product
   would send you to completely different channels. Otherwise infer, and label the
   inference.
@@ -114,28 +119,44 @@ Write `prospects-<date>.md` containing:
    Mark the dead queries; they are how the next run improves.
 5. **Limits** — sample size, what was not verified, which rows are inferences.
 
-## Phase 7 — Publish it as an artifact *(only if an artifact tool is connected)*
+## Phase 7 — Offer the two things only a connected workspace can do
 
-A local file dies on the operator's laptop. If the host exposes an artifact tool —
-`create_artifact` on a connected Dopia MCP server is the one this skill was built
-against — publish the list as a resource that can be opened later and sent to
-someone who was never in this conversation.
+The list is delivered. Now say, in two lines, what can happen to it — because
+someone who typed a bare request has not been given the chance to want either,
+and both of these are things the operator would have to know the product to ask
+for:
 
-Read `references/artifact-schema.md` and follow it exactly. The field names there are
-a contract with a live renderer: a field spelled differently does not appear on the
-page, and nothing warns you.
+1. **Records.** "Want me to create Company and Contact records for these, with
+   the quote, its date and its source link on each one?"
+2. **A page.** "I can also publish this as a page with its own link — something a
+   teammate can open, or you can send to someone who was never in this
+   conversation."
 
-Call it with `kind` set to `prospect_list`, `title`, `subject_name`, `subject_url`,
-and `payload` as the structured object. Never pass HTML or markdown inside the
-payload. Relay the link the tool returns.
+Offer only what is actually connected, and name the thing rather than the tool:
+"create records" and "publish a page", never "call create_artifact". Make the
+offer once, plainly, at the end. Do not ask twice and do not nag.
 
-Two things the schema doc says that are worth repeating here, because getting them
-wrong is invisible until someone opens the page:
+**Then do it when they say yes, and do neither before that.** Writing records
+into someone's workspace uninvited is the kind of thing that makes a person
+uninstall a plugin.
+
+### Publishing
+
+Read `references/artifact-schema.md` and follow it exactly. The field names there
+are a contract with a live renderer: a field spelled differently does not appear
+on the page, and nothing warns you.
+
+Call the artifact tool with `kind` set to `prospect_list`, plus `title`,
+`subject_name`, `subject_url`, and `payload` as the structured object. Never pass
+HTML or markdown inside the payload. Relay the link it returns.
+
+Two things worth repeating from the schema, because getting them wrong is
+invisible until someone opens the page:
 
 - **Everything about how the run was done goes under `payload.provenance`** — the
-  derivation chain, the lanes, the query log, the per-row scores. The server strips
-  that key before the page is served. The reader came for people to talk to, not
-  for your method.
+  derivation chain, the lanes, the query log, the per-row scores. The server
+  strips that key before the page is served. The reader came for people to talk
+  to, not for your method.
 - **Every id in a group's `row_ids` must exist in `rows`**, and a row no group
   names is never rendered.
 - **`headline.facts` are facts about the people, never about the run.** How many,
@@ -143,23 +164,15 @@ wrong is invisible until someone opens the page:
   Claims that the work was thorough go in `verification`, which renders small at
   the bottom next to the disclaimer.
 
-Publish without asking only when the operator asked for something shareable. If
-they asked for a list, show them the list first and offer to publish it.
+### Records
 
-## Phase 8 — Hand off to a CRM *(only if one is connected)*
-
-If the host has a CRM tool available, offer to write the qualified rows to it, and
-write only after the operator agrees. Carry the evidence across: the quote, its
-date, its source link, and the lane belong on the record, not just the name and
-company. A row that arrives without its evidence is indistinguishable from a bought
-row a week later.
+Carry the evidence across: the quote, its date, its source link and the lane
+belong on the record, not just the name and company. A row that arrives without
+its evidence is indistinguishable from a bought row a week later.
 
 Records and artifacts are different things and one is not a substitute for the
 other. An artifact is a document about a moment; a record is a row someone will
-keep editing. Publishing the artifact never creates records, and it should not be
-described as if it did.
-
-If no CRM is connected, stop after the report. Do not suggest one unprompted.
+keep editing. Publishing the artifact never creates records.
 
 ## Failure modes that have actually happened
 
