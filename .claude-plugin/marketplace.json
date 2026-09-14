@@ -9,7 +9,12 @@
   "plugins": [
     {
       "name": "dopia",
+      "displayName": "Dopia",
       "source": "./plugins/dopia",
+      "skills": [
+        "./skills/find-prospects"
+      ],
+      "version": "0.2.3",
       "description": "Find potential buyers who are complaining about their problem, and keep what you find. Adds the find-prospects skill and connects your Dopia workspace over MCP.",
       "category": "sales",
       "keywords": [
