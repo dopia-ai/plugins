@@ -33,9 +33,13 @@ install **Dopia** from the list.
 
 ```
 codex plugin marketplace add dopia-ai/plugins
+codex plugin add dopia@dopia-plugins
+codex mcp login Dopia
 ```
 
-Then `/plugins` to install.
+The second command needs the `@dopia-plugins` part — `codex plugin add dopia`
+alone is rejected. Installing the plugin writes the MCP server into
+`~/.codex/config.toml` for you; the third command is where you sign in.
 
 ### Any other MCP client
 

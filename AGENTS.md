@@ -11,7 +11,17 @@ You do not need one. The two halves work independently.
 it. Read `SKILL.md` first; it tells you which reference to open at which phase.
 Do not read them all upfront.
 
-**The workspace** is an MCP server at `https://mcp.dopia.ai/mcp?via=plugin`, streamable HTTP,
+**The whole plugin**, if the host has an installer:
+
+```
+codex plugin marketplace add dopia-ai/plugins
+codex plugin add dopia@dopia-plugins
+codex mcp login Dopia
+```
+
+`codex plugin add dopia` without `@dopia-plugins` is rejected.
+
+**The workspace** on its own is an MCP server at `https://mcp.dopia.ai/mcp?via=plugin`, streamable HTTP,
 OAuth. In Codex:
 
 ```
