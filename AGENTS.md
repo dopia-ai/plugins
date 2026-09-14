@@ -15,14 +15,14 @@ Do not read them all upfront.
 OAuth. In Codex:
 
 ```
-codex mcp add dopia --url https://mcp.dopia.ai/mcp
-codex mcp login dopia
+codex mcp add Dopia --url https://mcp.dopia.ai/mcp
+codex mcp login Dopia
 ```
 
 Or in `~/.codex/config.toml`:
 
 ```toml
-[mcp_servers.dopia]
+[mcp_servers.Dopia]
 url = "https://mcp.dopia.ai/mcp"
 auth = "oauth"
 ```
