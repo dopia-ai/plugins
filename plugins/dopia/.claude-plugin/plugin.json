@@ -1,0 +1,21 @@
+{
+  "name": "dopia",
+  "version": "0.1.0",
+  "description": "Find potential buyers who are complaining about their problem, and keep what you find",
+  "author": {
+    "name": "Dopia",
+    "url": "https://dopia.ai"
+  },
+  "homepage": "https://dopia.ai/features/agentic-platform",
+  "repository": "https://github.com/dopia-ai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "crm",
+    "prospecting",
+    "sales",
+    "gtm",
+    "outbound",
+    "revenue",
+    "artifacts"
+  ]
+}

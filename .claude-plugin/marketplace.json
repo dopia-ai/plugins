@@ -1,0 +1,25 @@
+{
+  "name": "dopia-plugins",
+  "description": "Dopia's plugins for Claude and Codex. Find potential buyers who are complaining about their problem, and keep what you find.",
+  "owner": {
+    "name": "Dopia",
+    "email": "support@dopia.ai",
+    "url": "https://dopia.ai"
+  },
+  "plugins": [
+    {
+      "name": "dopia",
+      "source": "./plugins/dopia",
+      "description": "Find potential buyers who are complaining about their problem, and keep what you find. Adds the find-prospects skill and connects your Dopia workspace over MCP.",
+      "category": "sales",
+      "keywords": [
+        "crm",
+        "prospecting",
+        "sales",
+        "gtm",
+        "outbound",
+        "revenue"
+      ]
+    }
+  ]
+}
