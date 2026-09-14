@@ -76,6 +76,17 @@ payload as well is the most common way to end up with an untitled page.
       "company": "ART o LUNA",
       "domain": "artolunagallery.com",
       "profile_url": "https://artolunagallery.com",
+
+      "contact": {
+        "tier": "person_via_company",
+        "name": "Luna Martens",
+        "role": "Owner",
+        "email": "hello@artolunagallery.com",
+        "profile_url": "https://www.linkedin.com/in/…",
+        "source_url": "https://artolunagallery.com/policies/contact-information",
+        "note": "Address published on the store's own contact-information page."
+      },
+
       "headline": "One line: who they are and why they are on this list.",
       "evidence": {
         "quote": "Their words, trimmed to the part that carries the pain.",
@@ -154,6 +165,13 @@ payload as well is the most common way to end up with an untitled page.
 - **`rows[].id` is the join key.** Every id in a group's `row_ids` must exist in
   `rows`, or that card is dropped without an error. A row not named by any group is
   never rendered — there is no "ungrouped" bucket.
+- 🔴 **`contact` is what makes the row a prospect rather than a lead to research.**
+  `tier` is one of `person_direct`, `person_via_company`, `company_only` — see
+  gate 8. At least one of `email` and `profile_url` must be present, and
+  `source_url` must be the page it was read off so the reader can check it.
+  Never a guessed address. A row that cannot carry this does not belong in
+  `rows`; a reader who has to go and find the human themselves has been handed
+  the work back.
 - **`facts` is what proves the gate was run on this row**, not on the batch. Put
   the actual observed values there — the platform detected, the vendor found, the
   stack seen. A row with a quote but no facts reads as scraped.

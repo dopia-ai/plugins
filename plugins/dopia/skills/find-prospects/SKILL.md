@@ -99,10 +99,24 @@ Log every query, including the ones that returned nothing.
 
 ## Phase 5 — Gate, then score
 
-Read `references/gates.md`. Seven hard gates; any failure discards the row. Then
-score survivors on five axes, reported separately. A row without a dated quote and
-a working link never enters the list, however promising the person looks. Never
-pad a list to reach a target count — a short honest list is the product.
+Read `references/gates.md`. Apply the eight hard gates in order, cheapest first,
+then score survivors on five axes, reported separately. A row without a dated,
+linked quote and without a working link never enters the list, however promising
+the person looks. Never pad a list to reach a target count — a short honest list
+is the product.
+
+**Gate 8 is the one that decides whether this was useful.** A row has to carry a
+route to a human: a named person with their own profile or published address, or
+failing that a real inbox or form the business publishes itself. A company domain
+is not a contact — it is the research the operator came here to avoid, handed
+back to them.
+
+Expect to spend real effort here, and expect it to be ordinary public pages: the
+site's contact and about pages, the footer, and for a Shopify store the
+auto-generated `/policies/contact-information`, which is where an anonymous
+reviewer's shop is obliged to publish a real address. **Never guess an address
+from a pattern.** A row whose route cannot be found does not ship in the list;
+put it in a short "needs a name" section instead and say what is missing.
 
 ## Phase 6 — Deliver
 
@@ -110,8 +124,11 @@ Write `prospects-<date>.md` containing:
 
 1. **Header** — the product read, both ICP hypotheses, the derived chain and gate 4
    verbatim, and the platform-terms note.
-2. **The list** — per person: name, profile link, company, domain, the quote, its
-   date, its link, the lane, the five scores, and one line of why now.
+2. **The list** — per person: name, profile link, company, domain, **how to reach
+   them and which page that was read off**, the quote, its date, its link, the
+   lane, the five scores, and one line of why now. The contact is not a footnote:
+   it is the difference between a list and a reading assignment, and it is what
+   anything that comes after this — a message, a record, a call — starts from.
 3. **The corpus** — quotes from corpus-source channels grouped by the pain they
    express. This is the buyer's own vocabulary, and it is how you check whether
    gate 4 was derived correctly.
