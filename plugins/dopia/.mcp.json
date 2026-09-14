@@ -2,7 +2,7 @@
   "mcpServers": {
     "Dopia": {
       "type": "http",
-      "url": "https://mcp.dopia.ai/mcp",
+      "url": "https://mcp.dopia.ai/mcp?via=plugin",
       "note": "Dopia's MCP server. OAuth — on first use you approve three scopes in the browser and can revoke them from Settings at any time: read your CRM, write records back, and publish an artifact. The skill in this plugin works without it, writing a local file instead; connecting is what turns the result into a page you can send to someone who has no account."
     }
   }

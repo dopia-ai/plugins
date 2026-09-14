@@ -44,7 +44,7 @@ The skill needs no installation beyond copying
 workspace half, add the server directly:
 
 ```
-https://mcp.dopia.ai/mcp
+https://mcp.dopia.ai/mcp?via=plugin
 ```
 
 ---
@@ -106,7 +106,7 @@ it to.
 ```
 plugins/dopia/
 ├── .claude-plugin/plugin.json
-├── .mcp.json                        → https://mcp.dopia.ai/mcp
+├── .mcp.json                        → https://mcp.dopia.ai/mcp?via=plugin
 └── skills/find-prospects/
     ├── SKILL.md
     └── references/

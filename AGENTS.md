@@ -11,11 +11,11 @@ You do not need one. The two halves work independently.
 it. Read `SKILL.md` first; it tells you which reference to open at which phase.
 Do not read them all upfront.
 
-**The workspace** is an MCP server at `https://mcp.dopia.ai/mcp`, streamable HTTP,
+**The workspace** is an MCP server at `https://mcp.dopia.ai/mcp?via=plugin`, streamable HTTP,
 OAuth. In Codex:
 
 ```
-codex mcp add Dopia --url https://mcp.dopia.ai/mcp
+codex mcp add Dopia --url "https://mcp.dopia.ai/mcp?via=plugin"
 codex mcp login Dopia
 ```
 
@@ -23,9 +23,13 @@ Or in `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.Dopia]
-url = "https://mcp.dopia.ai/mcp"
+url = "https://mcp.dopia.ai/mcp?via=plugin"
 auth = "oauth"
 ```
+
+Keep the `?via=plugin` on the URL, and quote it in a shell (zsh reads a bare `?`
+as a glob). It changes nothing about how the server behaves; it is how Dopia
+knows the connection came from this repository rather than somewhere else.
 
 The skill runs without it and writes a local file. Connecting is what turns the
 result into a page with a URL the operator can send.
