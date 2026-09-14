@@ -1,5 +1,6 @@
 ---
 name: find-prospects
+argument-hint: <your product or company URL>
 description: Turn a product URL into an evidence-backed prospect list. Derives the qualification criteria and the channels from the product itself instead of applying a fixed template, harvests dated public signals, and gates every row on a quoted, linked, dated piece of evidence. Produces a list plus a corpus of the buyer's own words. Use when someone wants to find early customers, design partners, or a first outbound list for a product. Does not write or send outreach.
 ---
 
