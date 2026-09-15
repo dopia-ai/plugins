@@ -130,9 +130,11 @@ tool only works for products that happen to share it.
 ## Links
 
 - [Dopia](https://dopia.ai)
-- [Run it from Claude](https://dopia.ai/features/agentic-platform/claude)
-- [Run it from Codex](https://dopia.ai/features/agentic-platform/codex)
-- [What Dopia exposes to agents](https://dopia.ai/features/agentic-platform)
+- [The plugin on dopia.ai](https://dopia.ai/features/agentic-platform/plugin) — install for
+  [Claude Code](https://dopia.ai/features/agentic-platform/plugin#claude-code),
+  [Codex](https://dopia.ai/features/agentic-platform/plugin#codex) and
+  [the Claude app](https://dopia.ai/features/agentic-platform/plugin#claude-app)
+- [What Dopia exposes to agents](https://dopia.ai/features/agentic-platform/mcp)
 
 Issues and pull requests welcome.
 
