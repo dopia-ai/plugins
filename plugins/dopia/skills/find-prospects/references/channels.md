@@ -53,18 +53,20 @@ trusting it:**
 
 | Source | Why, and what went wrong |
 |---|---|
-| The ATS hosts employers of this size actually use — Paylocity, Gusto, Workable, Breezy, SmartRecruiters, Greenhouse — searched with a host restriction | Primary source, published under the employer's own name. This produced the only named employers in both rehearsals. Expect client-rendered pages and 403s: this is browser work |
+| The ATS hosts employers of this size actually use, searched with a host restriction — which hosts those are depends on the market: Paylocity and Gusto for US small employers, Ashby, Lever and Greenhouse for venture-backed startups, national boards elsewhere | Primary source, published under the employer's own name. This produced the only named employers in both rehearsals. **Check for the board's feed before reading its pages** (`extraction.md`): the feed carries the posting date and proves the ad is still live, which the page usually does not. Expect client-rendered pages and 403s otherwise |
 | The employer's own careers page | Same fidelity, no discovery: you need the name first, so it confirms rather than finds |
 | The buyer's professional body's job board | Strong where the occupation is licensed and employers post directly. Two rehearsal failures: in an agency-intermediated occupation the ads are posted by recruiters with the employer stripped out, and in the trades the body fragmented into dozens of chapter boards with no public feed. Probe it; do not lead with it |
 | Keyword search on job aggregators | Loose matching, agency reposts, expired ads still rendering. Corpus at best |
 
 **Two things this lane does not reliably give you.**
 
-- **A date.** Seven small-employer ATS ads opened in rehearsal carried no posted
-  and no closing date. Take the date from the board index or the feed; where
-  there is none, the dated fact available is that the ad is *currently listed* on
-  a board that removes closed ones — record it that way, with the date you read
-  it, or the row cannot clear gate 1.
+- **A date, from the page.** Seven small-employer ads opened in rehearsal carried
+  no posted and no closing date in the ad body. The board's feed usually has one;
+  where there is none, the dated fact available is that the ad is *currently
+  listed* on a board that removes closed ones — record it that way, with the date
+  you read it, or the row cannot clear gate 1. Search results are the worst
+  source for this: in one run, 14 of 40 ads a search index still showed had
+  already been taken down.
 - **A route to a human.** An agency-posted ad names no employer by design, and
   the better the mandate the likelier it was placed through an agency: the
   rehearsal's best evidence sentence ("approximately 180 clients") was on an

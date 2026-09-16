@@ -25,7 +25,7 @@ Capabilities, not specific tools. Use whatever the host provides.
 |---|---|---|
 | Fetch a public web page | product teardown, company checks | the skill cannot run |
 | Web search | finding channels and posts | degrade to known registries only |
-| A browser the host provides | any page plain fetch cannot read | skip those lanes and say so in the output |
+| A browser the host provides | any page plain fetch cannot read — which today includes most surfaces that carry a person's identity | **say in Phase 3 which derived lanes this kills and what is left**, then run the short version knowingly |
 | Write a local file | the report | print the report instead |
 | An artifact tool *(optional)* | publishing the list as a shareable page | stop after the local file |
 | A CRM tool *(optional)* | writing qualified rows as records | stop after the report |
@@ -102,11 +102,17 @@ Read `references/channels.md`. Two rules do most of the work:
 2. **Label every channel a lead source or a corpus source.** Identity strength and
    pain strength run opposite to each other; a channel rarely gives both.
 
-Then say, before harvesting, what the plan depends on. If the lanes you derived
-can only be read with a browser and the host has not given you one, say that now
-rather than discovering it at the seventh fetch — a run whose primary lane is
-unreadable produces a short list for a reason the operator should hear at the
-start.
+**Then probe each derived lane once, before committing to the plan.** One
+request per lane, asking only whether it can be read at all. Sites put up login
+walls and bot walls on their own schedule, so a lane's reachability is a fact to
+discover on the day, never a fact to remember — and the surfaces that carry
+identity are the ones most often gated.
+
+Say what the probe found in the output header: which lanes are live, which need a
+browser the host has not provided, and what the list therefore cannot contain.
+An operator told this at the start can authorize a browser or accept a shorter
+list; an operator told at the end has been handed a disappointment with an
+explanation attached.
 
 ## Phase 4 — Harvest
 
@@ -118,6 +124,19 @@ main path, not an error branch.
 
 Give every lane a probe budget, and run the lanes in parallel where the host has
 sub-agents; `references/extraction.md` has both.
+
+**Budget for the yield, and say what the budget buys.** Candidates survive the
+gates at roughly one in ten — it has run between six and twelve in one across
+recorded runs — so a list of fifteen rows needs to see something like a hundred
+and fifty candidates. Work out what the available budget can actually see before
+harvesting, and if that is short of what was asked for, say so then. A thin list
+delivered without that sentence reads as "there is nobody out there", which is a
+different and much more damaging claim than "this is what an hour buys".
+
+Where the whole population is small — a few hundred licensed firms, one city's
+worth of a trade — the constraint is the universe rather than the budget. Then
+the honest output is the short list *and* the size of the universe it came from,
+which is a finding in its own right.
 
 Log every query, including the ones that returned nothing.
 
@@ -231,6 +250,19 @@ its evidence is indistinguishable from a bought row a week later.
 Records and artifacts are different things and one is not a substitute for the
 other. An artifact is a document about a moment; a record is a row someone will
 keep editing. Publishing the artifact never creates records.
+
+## Extending this skill
+
+When a run teaches you something, write **the principle**, then the specifics as
+labelled examples with the kind of buyer they came from. A rule that carries one
+run's furniture — the sites it used, the job titles it searched, the thresholds
+it set — reads as a law and breaks on the next product. Three rules here have
+already had to be rewritten for exactly that reason: a source ranking that held
+for one occupation, an event shape that only exists at large employers, and an
+ordering rule that assumed the operator sells outside their own market.
+
+The test before adding a rule: **name the product it would be wrong for.** If
+none comes to mind, the rule has not been thought through yet.
 
 ## Failure modes that have actually happened
 

@@ -1,5 +1,37 @@
 # Phase 4 — Fetching and extracting
 
+## Ask a source for its feed before you read its pages
+
+A registry that publishes for machines publishes better than it renders for
+people. Job boards expose posting APIs, regulators publish downloadable
+registers, exchanges and trade press run RSS, marketplaces expose listing feeds.
+Look for one before writing a single extraction: check `robots.txt` for sitemaps,
+look for an RSS or JSON link in the page head, try the documented API of whatever
+software the source runs on.
+
+**The reason is gate 1, not convenience.** A rendered page and a search result
+cannot tell you whether the thing is still true. A feed can: it carries the real
+timestamp, and a feed of *currently listed* items proves live-state by omission —
+what is gone is gone. In one run, checking the feed instead of the page showed
+that 14 of 40 candidates had quietly dropped the signal that qualified them, and
+three search summaries said the opposite of what the live record said.
+
+Examples, not a list to copy: applicant-tracking systems used by small employers
+each expose a public board endpoint (Ashby, Lever and Greenhouse all do, and the
+one your buyers use depends entirely on the market they hire in); company
+registries publish officer and licence data; exchanges publish announcement
+feeds. **Find the feed the way you would find any other fact about the source.**
+
+Two habits that go with feeds:
+
+- **Trust the URL, not the summary.** A search tool may silently drop a host
+  restriction and hand back something that reads right from somewhere else, and a
+  summariser will happily paraphrase a stale page into the present tense. Check
+  the host and the date at the source before a row carries them.
+- **Convert timestamps in code, not in prose.** Epoch milliseconds read back
+  through a summarising model come out as plausible, wrong dates — one run nearly
+  shipped a date three months in the future.
+
 ## Two paths, and the escalation between them
 
 - **Public marketing pages** → plain fetch. Cheap, no permission, no session.
