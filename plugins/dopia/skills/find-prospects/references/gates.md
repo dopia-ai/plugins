@@ -62,6 +62,12 @@ site and takes one fetch:
 4. **Their company page on a professional network**, then the named person on it.
 5. **The person's own profile**, found by name plus company.
 
+**Open the route once before you hand it over.** A profile found by searching a
+name and an employer is a guess until the page confirms the employer; one fetch
+settles it, and a link that turns out to be a different person of the same name
+is worse than no link at all — it is the row the operator will send first. Where
+the route could not be opened, say so on the row.
+
 **Never invent an address.** No `first.last@domain` permutations, no pattern
 guessing off one known address, no data broker. A guessed address is not a
 contact — it is a bounce that costs the operator their sending reputation, and

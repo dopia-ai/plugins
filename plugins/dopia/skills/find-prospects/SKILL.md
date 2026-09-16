@@ -74,10 +74,23 @@ And a customer that has just been acquired, renamed or taken over is not a cold
 row but an expansion or a save, which belongs in its own group. What the list is
 *not* is buyer voice.
 
-**Write down the operator's home market** — the region, the trade press, the
-events they already read — and whether they sell outside it at all. Rows from
-inside it are worth having and are the ones the operator could have found
-without you; Phase 6 says how that changes the order of the finished list.
+**Write down what the subject can already see — but only where the site says so.**
+Some subjects sell into one concentrated market and watch it closely: customer
+logos clustered in one region, offices there, the local trade press quoting them,
+the same three conferences on the site. Rows from inside that concentration are
+ones they may already know, and Phase 6 says what that does to the order.
+
+🔴 **This is a fact to read, never a fact to infer.** The evidence is the customer
+list, the office locations, the press and events the site itself names. **When
+that evidence is not on the site, write "unknown" and skip the demotion
+entirely.** Do not reach for the operator's language, the files open around you,
+the workspace you are connected to, or anything else about the session — none of
+that is public information about the product, and a run started from the same URL
+by anyone else would not see it. Inventing a home market invents a whole lane
+that was never checked, and then reports it as a limitation, which reads as
+diligence and is fiction. If it matters and the site is silent, this is a fair
+use of the one question the skill is allowed to ask: which channels do you
+already watch?
 
 Write two ICP hypotheses. Each needs a pain statement **in the buyer's own words**
 and explicit disqualifiers.
@@ -180,21 +193,35 @@ Write `prospects-<date>.md` containing:
    and existing-customer rows are a different conversation, so they group apart.
    Beyond that the axis depends on the subject:
 
-   - Selling from a home market into a wider one, the axis is *home market or
-     not*: rows from the trade press they read every week go in a group that
-     says so, and do not lead. **If almost every row lands in that group, the
-     channel derivation failed, not the list** — go back to Phase 3 rather than
-     shipping the operator a summary of their own week.
-   - Selling to their whole market at once, that axis is empty and demoting by
-     it would demote everything. Use the gate-4 sub-result instead — who has
-     nothing in place versus who is running a competitor — which is precisely
-     what the operator cannot see from outside.
-3. **The corpus** — quotes from corpus-source channels grouped by the pain they
+   - Where Phase 1 found evidence of a concentrated home market, that is the
+     axis: rows from the trade press they read every week go in a group that
+     says so, and do not lead. **Demoted still means delivered** — run the lane
+     and group it, do not quietly skip it, and if the budget forces you to cut
+     it, say that you cut it and what it would likely have held. **If almost
+     every row lands in that group, the channel derivation failed, not the
+     list** — go back to Phase 3.
+   - Where Phase 1 found no such evidence, or the subject sells to its whole
+     market at once, that axis does not exist and demoting by it would demote
+     everything. Use the gate-4 sub-result instead — who has nothing in place
+     versus who is running a competitor — which is what the operator cannot see
+     from outside.
+3. **The close calls, in two short sections the operator can overrule.**
+   - **Judged a peer.** Anyone gate 7 removed whose category sits next to the
+     operator's rather than on top of it. The gate is a rule of thumb about how
+     outreach will be read, and the operator knows their own neighbours; list
+     the name, what they sell and the one sentence that decided it.
+   - **Still listed, outside the window.** A signal that is demonstrably live but
+     older than gate 1 allows. Give its age in days and let them decide, rather
+     than dropping silently what may be the strongest fit on the page.
+
+   Both sections were invented by runs that needed them. Keep them short; a row
+   that belongs in the list belongs in the list.
+4. **The corpus** — quotes from corpus-source channels grouped by the pain they
    express. This is the buyer's own vocabulary, and it is how you check whether
    gate 4 was derived correctly.
-4. **Query log** — channel, exact query, candidates surfaced, candidates survived.
+5. **Query log** — channel, exact query, candidates surfaced, candidates survived.
    Mark the dead queries; they are how the next run improves.
-5. **Limits** — sample size, what was not verified, which rows are inferences.
+6. **Limits** — sample size, what was not verified, which rows are inferences.
 
 ## Phase 7 — Offer the two things only a connected workspace can do
 
