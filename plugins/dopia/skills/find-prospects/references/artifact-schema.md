@@ -178,6 +178,10 @@ payload as well is the most common way to end up with an untitled page.
 - **`company` is the card's heading.** For a person-led row put the person where the
   reader expects a name and carry the employer in `facts`; do not leave the heading
   blank.
+- **`evidence.quote_date` is one day, so an approximate date needs care.** Put
+  the oldest day the source allows in the field and carry the real precision in
+  `source_label` ("LinkedIn post, 30 to 59 days old when read"). A range rendered
+  as a single fresh-looking date is the one lie the page cannot recover from.
 - **`evidence.source_url` should deep-link to the quote** where the platform allows
   it, not to the site's front door. "See it" that lands on a homepage is worse than
   no link.

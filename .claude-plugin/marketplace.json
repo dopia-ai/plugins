@@ -14,7 +14,7 @@
       "skills": [
         "./skills/find-prospects"
       ],
-      "version": "0.2.7",
+      "version": "0.2.8",
       "description": "Find potential buyers who are complaining about their problem, and keep what you find. Adds the find-prospects skill and connects your Dopia workspace over MCP.",
       "category": "sales",
       "keywords": [

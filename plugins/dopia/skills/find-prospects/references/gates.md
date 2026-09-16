@@ -177,6 +177,15 @@ operator three different jobs labelled as one.
   nothing. If a vendor-curated quote is the only corpus available, say that the
   corpus is vendor-curated and treat it as weak.
 - **Quote minimally, link always, and record the date you saw it.**
+- **A date is only as precise as the page that gave it.** Platforms that label a
+  post "2w" or "1mo" are handing you a range, not a day: render it as one — "30
+  to 59 days old, read on <date>" — and never write it as an exact date with a
+  tilde in front, which reads as precision the source never had. Where a single
+  field must hold one date, use the **oldest** day the label allows: erring older
+  understates a signal, erring newer manufactures freshness, and freshness is
+  what the operator is trusting you on. Same discipline for the link: if it
+  resolves only for a signed-in viewer, or is a search for the sentence because
+  the platform publishes no permalink, say that beside it.
 - Never write that a prospect is interested, needs the product, or will buy. The
   correct label is *a potential customer based on a public signal*.
 - Separate observed fact, inference, and recommendation in the output. Mark
