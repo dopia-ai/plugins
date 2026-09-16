@@ -62,11 +62,20 @@ site and takes one fetch:
 4. **Their company page on a professional network**, then the named person on it.
 5. **The person's own profile**, found by name plus company.
 
-**Open the route once before you hand it over.** A profile found by searching a
-name and an employer is a guess until the page confirms the employer; one fetch
-settles it, and a link that turns out to be a different person of the same name
-is worse than no link at all — it is the row the operator will send first. Where
-the route could not be opened, say so on the row.
+**Know which kind of route you have, and verify the kind that needs it.**
+
+- **Read off a page that states the link** — a registry's founder card, a team
+  page, an author byline, a profile the person published in their own bio. The
+  page is the verification: it is the source asserting that this person belongs
+  to this company. Record which page, and you are done.
+- **Found by searching a name plus a company** — a guess until something confirms
+  it. Open it once, or find the same link on a page that asserts it. A profile
+  that turns out to be a different person of the same name is worse than no link
+  at all, because it is the row the operator will send first.
+
+Where a route could not be confirmed either way, keep the row and say so on it.
+On a platform that is browser-only, confirming a profile is browser work like
+any other reading there — do not fall back to a fetcher for it.
 
 **Never invent an address.** No `first.last@domain` permutations, no pattern
 guessing off one known address, no data broker. A guessed address is not a

@@ -25,7 +25,7 @@ Capabilities, not specific tools. Use whatever the host provides.
 |---|---|---|
 | Fetch a public web page | product teardown, company checks | the skill cannot run |
 | Web search | finding channels and posts | degrade to known registries only |
-| A browser the host provides | any page plain fetch cannot read — which today includes most surfaces that carry a person's identity | **say in Phase 3 which derived lanes this kills and what is left**, then run the short version knowingly |
+| A browser the host provides | any page plain fetch cannot read, and every lane on a platform that carries people's identities — those are browser-first, not browser-as-fallback | **say in Phase 3 which derived lanes this kills and what is left**, then run the short version knowingly |
 | Write a local file | the report | print the report instead |
 | An artifact tool *(optional)* | publishing the list as a shareable page | stop after the local file |
 | A CRM tool *(optional)* | writing qualified rows as records | stop after the report |
@@ -54,6 +54,24 @@ Capabilities, not specific tools. Use whatever the host provides.
   Automated collection conflicts with the terms of most platforms, and reading
   inside a session someone already opened is the conservative end of that rather
   than an exemption. Say in the output header when a browser was used.
+- 🔴 **The platforms that carry people's identities are browser work, and that is
+  the first choice rather than the fallback.** Where a platform is absent from
+  search results *and* forbids automated collection — the professional networks,
+  the microblogs, the big community sites mostly are both — read it in the
+  operator's own browser, at the pace a person reads, or do not run the lane.
+  Do not enumerate it with a fetcher on an interval you picked because it felt
+  polite: **the rate limit is not the rule, the terms are**, and a run that
+  discovers this by being throttled has already done the thing it should not
+  have. A fetcher is fine for a site's public feed or API; it is not a way into
+  a platform that publishes neither.
+
+  This is also simply the better lane. In the operator's own session you see
+  what they would see — their network, their logged-in search, the profile that
+  tells you whether this is the right person — and the identity these platforms
+  carry is the thing the whole list is short of. Say in Phase 3 which lanes this
+  makes browser-only, and if no browser was provided, say what the list cannot
+  contain because of it rather than substituting a keyword search that returns
+  lookalikes from other hosts.
 - **One question, maximum.** Ask the operator only if two readings of the product
   would send you to completely different channels. Otherwise infer, and label the
   inference.
@@ -121,8 +139,9 @@ walls and bot walls on their own schedule, so a lane's reachability is a fact to
 discover on the day, never a fact to remember — and the surfaces that carry
 identity are the ones most often gated.
 
-Say what the probe found in the output header: which lanes are live, which need a
-browser the host has not provided, and what the list therefore cannot contain.
+Say what the probe found in the output header: which lanes are live, which are
+browser-only (by gating or by terms), which need a browser the host has not
+provided, and what the list therefore cannot contain.
 An operator told this at the start can authorize a browser or accept a shorter
 list; an operator told at the end has been handed a disappointment with an
 explanation attached.
