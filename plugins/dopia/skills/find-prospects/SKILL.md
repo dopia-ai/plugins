@@ -64,6 +64,21 @@ From the URL: the outcome sold, who signs versus who uses, the buying motion
 visible on the page, the geography, the strongest use case. Read the pricing page
 and the docs if they exist.
 
+**Read the customer list too — the logo wall, the case studies, the
+testimonials.** The pattern in it is the most reliable thing Phase 1 produces:
+it is who actually buys, against which your ICP hypotheses are a guess. It also
+gives an exclusion list, though how much that is worth scales inversely with how
+many customers the subject has — fourteen logos against a hundred thousand
+customers excludes nothing, and `references/gates.md` says what to do instead.
+And a customer that has just been acquired, renamed or taken over is not a cold
+row but an expansion or a save, which belongs in its own group. What the list is
+*not* is buyer voice.
+
+**Write down the operator's home market** — the region, the trade press, the
+events they already read — and whether they sell outside it at all. Rows from
+inside it are worth having and are the ones the operator could have found
+without you; Phase 6 says how that changes the order of the finished list.
+
 Write two ICP hypotheses. Each needs a pain statement **in the buyer's own words**
 and explicit disqualifiers.
 
@@ -87,6 +102,12 @@ Read `references/channels.md`. Two rules do most of the work:
 2. **Label every channel a lead source or a corpus source.** Identity strength and
    pain strength run opposite to each other; a channel rarely gives both.
 
+Then say, before harvesting, what the plan depends on. If the lanes you derived
+can only be read with a browser and the host has not given you one, say that now
+rather than discovering it at the seventh fetch — a run whose primary lane is
+unreadable produces a short list for a reason the operator should hear at the
+start.
+
 ## Phase 4 — Harvest
 
 Read `references/extraction.md` before the first fetch. Public pages go through
@@ -94,6 +115,9 @@ plain fetching; session-gated and client-rendered pages go through the browser.
 **When a plain fetch fails, escalate to the browser and ask the operator to
 authorize that domain** — escalation is roughly a third of all fetches, so it is a
 main path, not an error branch.
+
+Give every lane a probe budget, and run the lanes in parallel where the host has
+sub-agents; `references/extraction.md` has both.
 
 Log every query, including the ones that returned nothing.
 
@@ -125,10 +149,27 @@ Write `prospects-<date>.md` containing:
 1. **Header** — the product read, both ICP hypotheses, the derived chain and gate 4
    verbatim, and the platform-terms note.
 2. **The list** — per person: name, profile link, company, domain, **how to reach
-   them and which page that was read off**, the quote, its date, its link, the
-   lane, the five scores, and one line of why now. The contact is not a footnote:
-   it is the difference between a list and a reading assignment, and it is what
-   anything that comes after this — a message, a record, a call — starts from.
+   them and which page that was read off**, the evidence and whether it is the
+   buyer's words or a dated event, its date, its link, the lane, the five scores,
+   and one line of why now. The contact is not a footnote: it is the difference
+   between a list and a reading assignment, and it is what anything that comes
+   after this — a message, a record, a call — starts from.
+
+   **Order the groups by the axis the operator has least visibility into, and
+   derive that axis like any other.** They are paying for reach past what they
+   can already see. Evidence in the buyer's own words leads events either way,
+   and existing-customer rows are a different conversation, so they group apart.
+   Beyond that the axis depends on the subject:
+
+   - Selling from a home market into a wider one, the axis is *home market or
+     not*: rows from the trade press they read every week go in a group that
+     says so, and do not lead. **If almost every row lands in that group, the
+     channel derivation failed, not the list** — go back to Phase 3 rather than
+     shipping the operator a summary of their own week.
+   - Selling to their whole market at once, that axis is empty and demoting by
+     it would demote everything. Use the gate-4 sub-result instead — who has
+     nothing in place versus who is running a competitor — which is precisely
+     what the operator cannot see from outside.
 3. **The corpus** — quotes from corpus-source channels grouped by the pain they
    express. This is the buyer's own vocabulary, and it is how you check whether
    gate 4 was derived correctly.
@@ -202,3 +243,15 @@ keep editing. Publishing the artifact never creates records.
 - **Letting a generic word poison a query.** A product name that is also an
   ordinary word needs a context word bound to it.
 - **Treating a fetch failure as a dead lead.** It is a routing decision, not a verdict.
+- **Dressing an event up as a complaint.** When no one says anything in public,
+  a sentence gets lifted from a press release into the quote field and the row
+  now implies a grievance nobody has. Ship the event as an event.
+- **Quoting the subject's own testimonials back at them.** They wrote those. That
+  page is evidence of who buys, and a partial exclusion list — never buyer voice.
+- **Opening on the buyer's home market.** The local trade press is the easiest
+  lane to harvest and the one the operator reads every week, so it is the fastest
+  way to hand back work they had already done.
+- **Searching the words the product's marketing uses.** They are the category's
+  SEO keywords: the results are the subject, its competitors, and the template
+  libraries their content teams publish. Bind the work-words to a host, a role
+  title, or a regulated artefact name.

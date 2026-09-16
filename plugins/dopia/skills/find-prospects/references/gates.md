@@ -79,6 +79,17 @@ These caught every bad row in testing without any judgment call:
 - **Peer**: bio or site sells the same category, or sells go-to-market services.
 - **Wrong vertical**: passes every structural gate but sells into a sector the
   product cannot serve.
+- **Already a customer**: shipping a current customer as a cold prospect is the
+  one error the operator notices immediately. The logo wall is the cheap check
+  and it is only ever partial — fourteen names against a hundred thousand
+  customers excludes nothing. **Where the product leaves a footprint on the
+  prospect's own site** — a booking widget, a portal, a chat bubble, a pixel —
+  that footprint is the real check: fingerprint the site's `script[src]` and form
+  hosts as in `extraction.md`, and make the result a gate-4 sub-result
+  (`greenfield` / `displacement` / `already a customer`) rather than a footnote.
+  **Where the subject sells several products**, a firm on a sibling product's
+  customer list is not cold either. Say in the output which check was available
+  and that their own CRM is the real list.
 
 Run the disqualifiers *before* the expensive gates. They are free and they remove
 roughly a fifth of raw candidates.
@@ -123,12 +134,48 @@ operator three different jobs labelled as one.
 
 ## Evidence discipline
 
-- **No quote, no row.** A prospect without a citable sentence is a guess.
+- **Every row carries dated, linked evidence, and says which kind it is.** There
+  are two kinds and they are not interchangeable:
+  - **Words** — the buyer describing the work or the problem: a complaint, a
+    review, a forum post, an interview answer, a job ad whose description of the
+    work was written by the employer.
+  - **An event** — something dated that happened to them: an acquisition, a new
+    office, a new person in the seat that owns this work.
+
+  Words are stronger, and for some buyers they do not exist in public at all,
+  because admitting this particular mess is unflattering or reportable. When the
+  words are not there, **ship the event as an event.** Do not go back to the
+  press release and lift a sentence to fill a quote field: "It advances our
+  long-term strategy" in the place a reader expects the buyer's own words reads
+  as evidence and is not. A list whose rows are honestly labelled events is worth
+  more than one that dresses events as complaints, because the first call
+  discovers the difference.
+- **Nothing a vendor wrote is buyer voice, whoever is hosting it.** Testimonials
+  on the subject's site, its case studies, its competitors' marketing pages: all
+  of it was chosen to sell and most of it is undated. Two disguises worth
+  knowing, both found in rehearsal: **a job ad assembled from a vendor's
+  published template** is that vendor talking, and the tell is the ad naming the
+  vendor's product in its requirements; and **the same ad reposted by three
+  agencies** is one copywriter, not three buyers, so count it once. It cannot confirm gate 4 —
+  it was selected by the person the gate is being derived for — and quoting it
+  back to the subject, who wrote it, is the fastest way to look like you found
+  nothing. If a vendor-curated quote is the only corpus available, say that the
+  corpus is vendor-curated and treat it as weak.
 - **Quote minimally, link always, and record the date you saw it.**
 - Never write that a prospect is interested, needs the product, or will buy. The
   correct label is *a potential customer based on a public signal*.
 - Separate observed fact, inference, and recommendation in the output. Mark
   inferences as inferences.
+
+## What a corpus entry looks like
+
+| field | note |
+|---|---|
+| quote | the speaker's words, minimal |
+| speaker segment | which kind of organisation they speak for — the axis Rule 6 in `channels.md` is read against |
+| source kind | buyer voice, or vendor-curated |
+| date | of the quote |
+| source link | resolves to the exact item |
 
 ## What a row looks like
 
@@ -138,8 +185,9 @@ operator three different jobs labelled as one.
 | profile link | the public surface where the signal appeared |
 | company | |
 | domain | verified to load |
-| quote | their words, minimal |
-| date | of the quote, not of the harvest |
+| evidence kind | `words` or `event` — see evidence discipline |
+| quote | their words, minimal; empty when the evidence is an event |
+| date | of the quote or the event, not of the harvest |
 | source link | resolves to the exact item |
 | contact | tier, the name and role when known, and the route itself |
 | contact source | the page the route was read off, so it can be checked |

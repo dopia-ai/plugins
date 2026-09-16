@@ -18,6 +18,35 @@ authorize that domain.** Browser extensions restrict navigation to authorized
 sites; requesting authorization is expected and is the reason the extension
 exists. Do not discard a candidate because a fetch failed.
 
+## A budget per lane, and lanes in parallel
+
+**Give every lane a probe budget before you open it** — a handful of queries, or
+one page of results — and when the budget is spent with nothing surviving, write
+the lane down as dead and leave. Lanes that sound perfect are the expensive ones:
+a run once spent its remaining time on public-sector audit filings because the
+idea was too good to abandon, and returned nothing. The dead lanes in the query
+log are worth more than the time it costs to keep poking them.
+
+**Run the lanes in parallel when the host can.** Three lanes explored at once,
+each with its own budget, is most of the difference between a thin list and a
+good one, and it is a scheduling decision rather than a smarter search. Where the
+host offers sub-agents or parallel tasks, give each lane one and merge the
+survivors; where it does not, run them in sequence and say so in the output.
+
+**Pin the geography before the first query when the product serves one market.**
+A search index skews to the US whatever the query says. A rehearsal for a UK-only
+product got the subject's own homepage back from an unrestricted query, then
+collapsed entirely into US salary pages when it tried to exclude aggregators. For
+a single-market product, restrict searches to that market's registries, boards
+and trade press from the first query, and treat unrestricted search as a probe
+for vocabulary rather than for candidates.
+
+**A browser is also a way to search, not only a way to read.** Search operators a
+built-in search tool cannot express — a file type, a date range, a single site —
+often turn a dead lane into a live one. The boundaries do not change: read at
+human pace, and if a search engine puts up a bot check, stop and take another
+lane rather than work around it.
+
 ## Domain fallback chain
 
 Before failing gate 2, try in order: the bare domain, `www.`, plain `http`, the
