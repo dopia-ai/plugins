@@ -12,6 +12,19 @@ still true. This skill produces a different row: **a person, a dated public thin
 they said or did, a link to it, and why that makes now the moment.** Every claim in
 the output can be clicked back to its source.
 
+🔴 **The one standard everything else serves: every row must be someone who could
+plausibly pay for this product.** Not someone interesting, not someone who
+described the problem well, not a company that merely fits the shape — someone
+whose money could end up in the operator's account. That is the entire value
+delivered, so it is the entire basis for judging the output.
+
+Two consequences run through every phase below. **A competitor is worth less than
+nothing** — their probability is zero and their presence makes the operator
+distrust every other row, so no quality of evidence rescues one. And **how likely
+is not yours to decide** — a plausible buyer at low probability costs the
+operator one message, so rank by likelihood and let them draw their own line
+rather than cutting on their behalf.
+
 The part that makes the output non-generic is **not** the searching. It is
 deriving *what to qualify on* from *what the product is worth*. Any skill that
 hardcodes a check only works for products that happen to share that check. Derive
@@ -175,10 +188,18 @@ Log every query, including the ones that returned nothing.
 ## Phase 5 — Gate, then score
 
 Read `references/gates.md`. Apply the eight hard gates in order, cheapest first,
-then score survivors on five axes, reported separately. A row without a dated,
+then score survivors on six axes, reported separately. A row without a dated,
 linked quote and without a working link never enters the list, however promising
 the person looks. Never pad a list to reach a target count — a short honest list
 is the product.
+
+**Cut on category, rank on probability.** The gates answer one question: could
+this ever be a customer? Peers, existing customers and wrong verticals are zero
+and they go, whatever their evidence looks like. Everything that clears that bar
+ships, ordered by purchase likelihood, because the operator sets their own
+threshold and cannot see what you removed. Cutting a real buyer for being a long
+shot is the quieter half of padding, and it costs them a customer rather than an
+email.
 
 **Gate 8 is the one that decides whether this was useful.** A row has to carry a
 route to a human: a named person with their own profile or published address, or
@@ -201,14 +222,15 @@ Write `prospects-<date>.md` containing:
    verbatim, and the platform-terms note.
 2. **The list** — per person: name, profile link, company, domain, **how to reach
    them and which page that was read off**, the evidence and whether it is the
-   buyer's words or a dated event, its date, its link, the lane, the five scores,
+   buyer's words or a dated event, its date, its link, the lane, the six scores,
    and one line of why now. The contact is not a footnote: it is the difference
    between a list and a reading assignment, and it is what anything that comes
    after this — a message, a record, a call — starts from.
 
-   **Order the groups by the axis the operator has least visibility into, and
-   derive that axis like any other.** They are paying for reach past what they
-   can already see. Evidence in the buyer's own words leads events either way,
+   **Order by purchase likelihood first, then by the axis the operator has least
+   visibility into.** They are paying for reach past what they can already see,
+   but they are paying for it in order to find someone who will buy — so a group
+   nobody will buy from does not lead just because it was hard to find. Evidence in the buyer's own words leads events either way,
    and existing-customer rows are a different conversation, so they group apart.
    Beyond that the axis depends on the subject:
 
@@ -314,6 +336,15 @@ none comes to mind, the rule has not been thought through yet.
 
 - **Searching a problem keyword and harvesting vendors.** People who post about a
   problem are usually selling the solution. On identity platforms, search events.
+- **Taking a quoted sentence as the speaker's own position.** On anything
+  threaded — forums, comment sections, reply chains — a comment often opens by
+  quoting the thing it is about and then argues *against* it. Lifting those words
+  attributes to a practitioner a complaint they were rebutting. Before quoting
+  from a thread, check whether the sentence is the commenter's or someone
+  else's: leading quotation marks, a `>` prefix, or a following sentence that
+  disagrees with what was just said.
+- **Mistaking fluency about the problem for need.** The clearest description of a
+  pain usually comes from whoever sells the cure. See gate 7.
 - **Harvesting a comment section whose author sells to the wrong audience.**
   Commenters inherit the author's audience. Check who the author sells to first.
 - **Picking the community where the topic is discussed instead of the one the

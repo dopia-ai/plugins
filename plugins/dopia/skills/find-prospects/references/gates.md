@@ -23,7 +23,16 @@ short honest list is the product, a padded one is the thing we are replacing.
    them.** A post by a rep about their employer does not qualify the employer.
 6. **Not a farming or dormant account.** See disqualifiers.
 7. **Not a peer.** Anyone who sells what you sell, or sells services around it, is
-   out — they will read the outreach as competitive research.
+   out. Not because the outreach would be awkward — because their probability of
+   buying is zero, so the row's value is not small, it is **negative**. An
+   operator who spots one competitor on the page starts wondering how every other
+   row got there. One peer discounts the whole list.
+
+   Peers are the hardest rows to cut, because they produce the best-sounding
+   evidence on the page: a company that sells the solution describes the problem
+   better than anyone who merely has it. **"They wrote our thesis almost
+   verbatim" is a warning, not a highlight.** The people who articulate a pain
+   most fluently are usually the ones already monetising the cure.
 8. **A way to reach someone.** See below. A row that names a problem but not a
    route to a human is a research task handed back to the operator, not a
    prospect.
@@ -109,11 +118,70 @@ These caught every bad row in testing without any judgment call:
 Run the disqualifiers *before* the expensive gates. They are free and they remove
 roughly a fifth of raw candidates.
 
+## "They already have something" is three states, not one
+
+A prospect who has already done something about this problem is the most
+commonly mishandled row in the skill, because the three ways they can have done
+it look similar from outside and are worth wildly different amounts.
+
+| what they did | what it proves | verdict |
+|---|---|---|
+| **Bought** a product for it — a competitor's, or an adjacent one | They will pay money for this problem. The only open question is switching cost. | **Strongest row on the page.** A seed company on HubSpot free is squarely in. |
+| **Built** something in-house | The pain is expensive enough to spend engineering on. Whether they would rather buy depends on how much it costs them to keep it. | **Keep, and say which.** Weigh it by what maintaining it costs them, not by how impressive it is. |
+| **Sells** it — it is their product or their billable service | They are the supply side. | **Gate 7. Out.** |
+
+The middle and bottom rows are the pair that gets merged, and merging them is
+how peers reach the page: "they built a rougher version of this by hand" reads as
+a warm displacement story whether the builder is a 20-person IoT company clearing
+its own tools backlog or a 130-person agency that sells the method. Ask one
+question to separate them: **does anyone pay them for this specific work?** If
+yes, it is gate 7 regardless of how good the quote is.
+
+The "built it in-house" row also needs its own read on scale. A company that
+built it and is about to triple the engineering team that maintains it is likelier
+to keep building than to buy.
+
+## Probability ranks the list; it does not cut it
+
+Two different jobs get confused here, and only one of them is yours.
+
+**Yours is the category question**: could this entity ever be a customer? That is
+binary and you own it. A peer, a company already on the subject's customer list,
+a business in a vertical the product cannot serve — zero, cut, no appeal.
+
+**Theirs is the threshold question**: how likely is likely enough to be worth a
+message? That belongs to the operator, and it depends on facts you do not have —
+how much outreach costs them, how empty their pipeline is, whether they send a
+hundred or five. A plausible buyer at low probability costs them one email. Cut
+it and you have made that decision on their behalf, silently, and they cannot
+see what was removed.
+
+So: **rank by purchase likelihood, do not prune by it.** Everything that clears
+the category question ships, ordered so the operator can draw their own line and
+stop reading wherever they like. Say what puts each group where it is.
+
+This does not license padding. "Never pad a list to reach a target count" is
+still the rule, and it is about a *different* failure: inventing or waving
+through rows that do not clear the gates. A real buyer at 10% is not padding. A
+row that fails gate 4 is padding at any probability.
+
+Where the evidence supports it, three things move a row up and are worth reading
+off the page you already have: they have paid for something adjacent, the person
+named controls the budget, and the problem is costing them now rather than in the
+abstract.
+
 ## Scoring the survivors
 
-Score only what survives. Five axes, and report them separately rather than as one
+Score only what survives. Six axes, and report them separately rather than as one
 number — a blended score hides which axis is weak.
 
+- 🔴 **Purchase likelihood** — the only axis the operator is actually buying, and
+  the one the other five are proxies for. Score it directly instead of letting it
+  fall out of the rest: would this company pay for this product, given what the
+  page shows about their budget, who the named person is, and what they have
+  already spent on this problem. Five axes of pristine evidence about a company
+  that will never buy still scores zero here, and this is the axis the list is
+  ordered by.
 - **Signal strength** — asking for help publicly beats announcing an event, which
   beats passive engagement.
 - **Recency** — inside 7 days beats inside 30.
@@ -217,7 +285,7 @@ operator three different jobs labelled as one.
 | contact source | the page the route was read off, so it can be checked |
 | lane | which channel and which query |
 | gate 4 result | what was found and where |
-| score | five axes, separately |
+| score | six axes, separately; purchase likelihood first |
 | why now | one sentence, grounded only in the quote |
 
 ## Honest labelling of what the gates prove

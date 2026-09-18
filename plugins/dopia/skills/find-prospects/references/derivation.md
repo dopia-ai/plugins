@@ -60,6 +60,71 @@ are a fit and three you are confident are not, and run the check on all six. If
 the check does not separate them, the proxy is wrong. This costs six page loads
 and it is the cheapest insurance in the whole run.
 
+🔴 **One of the three non-fits must be the subject's most direct competitor.** A
+competitor is never what comes to mind as an obvious non-fit — they look like the
+best fit in the world, because they live in the same problem all day. That is the
+trap. **If your derived gate 4 passes a company that sells what the subject
+sells, the gate describes the category and not the need**, and the run will
+spend its whole budget harvesting the subject's own neighbours.
+
+In a recorded run for a product that turns rough internal-app requests into
+build-ready specs, gate 4 came out as "names an agentic coding tool as part of
+how they build, AND has work arriving from people who will not build it". Every
+AI delivery consultancy on earth satisfies both halves perfectly. Four of the
+fourteen rows shipped were agencies selling requirements-to-agent-instructions as
+their own billable line. One competitor run through the check in Phase 2 would
+have caught it before a single search.
+
+## A derived gate needs a negative half
+
+The chain above produces a check for **who has the problem**. On its own that
+ships rows for companies who have the problem *and have already solved it*. Add a
+half that proves the problem is still open for them, from the same public
+surfaces you are already reading.
+
+- **CRM that remembers relationships**: positive half is a human sales entry
+  point plus a dated sign the founder still closes. Negative half: *no* RevOps,
+  Sales Ops or CRM-admin role in their open postings, and no sales team over
+  five. One extra read of a job board you already pulled.
+- **Internal-app specs for coding agents**: positive half is agents in the
+  delivery path plus a request-to-build boundary. A negative half would ask
+  whether they publish a planning or spec practice of their own — which is
+  exactly what every consultancy that got through does publish.
+
+The negative half is also the cheapest competitor filter you will ever write,
+because a company that sells the solution always publishes the solution.
+
+Name what the negative half costs you: it will reject some companies who solved
+it badly and would switch. Keep those as a labelled group rather than losing
+them — `gates.md` says how the three "already solved it" states differ, and only
+one of them is worthless.
+
+## Prefer a proxy that names a person
+
+Two proxies can be equally true about a company and produce lists of completely
+different value, because of what satisfying them leaves you holding.
+
+- **"The founder still closes every deal"** is a statement about a *person*.
+  Checking it hands you the human, their role and usually their profile in the
+  same act. Gate 8 is already satisfied when gate 4 passes.
+- **"They use coding agents and take requests from non-builders"** is a statement
+  about a *company*. Checking it hands you a domain. Finding a human is then a
+  second research task, done page by page on about-pages, after the evidence is
+  already in hand — and it is the step with nothing riding on it, so it is the
+  step that gets guessed at.
+
+Two recorded runs, same skill, two days apart: the person-anchored derivation
+shipped 29 of 30 rows with a direct route to a named human. The company-anchored
+one shipped 4 of 14, and most of the run's factual errors were in the contact
+block.
+
+So: **when two proxies would separate the population equally well, take the one
+whose subject is a human.** Where the buyer genuinely never surfaces as a person
+— a product bought by an anonymous committee, or one whose users never post —
+the company-anchored proxy is the right call and there is no better option. Then
+say so in Phase 3, and budget real time for gate 8 instead of treating it as a
+lookup at the end.
+
 ## The corpus is how you check yourself later
 
 Corpus-source channels (see `channels.md`) return the buyer describing the problem

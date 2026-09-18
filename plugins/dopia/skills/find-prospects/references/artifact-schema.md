@@ -145,7 +145,7 @@ payload as well is the most common way to end up with an untitled page.
     "rows": [
       {
         "id": "r1",
-        "scores": { "signal": 4, "recency": 3, "fit": 5, "reachability": 4, "evidence": 5 },
+        "scores": { "buy": 4, "signal": 4, "recency": 3, "fit": 5, "reachability": 4, "evidence": 5 },
         "confidence": "verified"
       }
     ]
@@ -194,10 +194,32 @@ payload as well is the most common way to end up with an untitled page.
 
 ## Before you call
 
-Check these four, because each fails silently rather than loudly:
+### Structure — these four fail silently rather than loudly
 
 1. Every `row_ids` entry resolves to a row.
 2. `title` / `subject_name` / `subject_url` are call arguments, not payload fields.
 3. Method, coverage, scores and query log are all under `provenance` — and no
    chip in `headline.facts` describes how the run was done.
 4. No field contains HTML tags or markdown syntax.
+
+### Content — these four fail loudly, in front of the reader
+
+A payload can pass every structural check, render perfectly, and still be wrong
+in the only ways the reader will notice. Structural errors are invisible until
+someone looks; these are invisible until someone *checks*, which the reader does
+for free with one click.
+
+5. **No row is a peer.** Read the list back and ask of each: does anyone pay them
+   to do this? One competitor discounts every other row on the page.
+6. **Every `headline.facts` chip is recomputed from `rows`**, not carried over
+   from an earlier draft. A chip claiming a size band when rows span 8 to 600
+   people is the kind of thing a reader checks first, and it is usually stale
+   arithmetic from before rows were cut.
+7. **`verification` claims only what a gate actually enforced.** It is the one
+   field that makes a promise about the work, so it is the one a reader tests. If
+   no gate verified contact routes, `verification` does not say they were all
+   read off their own pages.
+8. **Every `evidence.source_url` and `contact.source_url` resolves to the thing
+   it claims.** Deep-link, not a homepage; and any quote trimmed mid-sentence
+   carries a visible ellipsis, so a reader who opens the source finds what they
+   were shown.
