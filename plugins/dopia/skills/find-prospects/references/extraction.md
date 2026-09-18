@@ -115,6 +115,23 @@ returned five chat vendors on a site that loaded none of them: vendor strings
 appear in bundled code, in content-security headers, in preconnect hints, and in
 theme comments. Host matching returned the correct empty set.
 
+🔴 **A vendor's footprint is not always a script.** Host matching on `script[src]`
+and `link[href]` finds everything a site *embeds*, and misses everything it
+merely *links to* — which is now how a large part of the category ships.
+Feedback boards, roadmaps, help centres, status pages, community forums and
+booking pages are typically served from a tenant subdomain the customer links to
+in a footer or nav: `company.vendor.app`, `help.company.com` on a vendor's CNAME,
+`community.company.com`. In a recorded run, a row was published as "runs Google
+Tag Manager only" while the site's own nav linked a hosted feedback board — the
+one fact that would have made it the strongest row on the page, because it is a
+company demonstrably paying for something in the category.
+
+So widen the sweep to the anchors as well: collect the hosts of every `a[href]`
+that leaves the domain, and match those against the vendor list too. Where a gate
+turns on what a prospect already runs, also take the cheap out-of-band checks —
+a DNS CNAME on `help.`/`support.`/`status.`, and the vendor names in the page's
+own nav and footer text.
+
 Two things fall out of this for free and are worth keeping:
 
 - **The full third-party host list is a budget proof and a stack map.** A store

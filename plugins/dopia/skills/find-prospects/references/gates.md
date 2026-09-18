@@ -12,8 +12,21 @@ short honest list is the product, a padded one is the thing we are replacing.
    window in Phase 2 alongside gate 4, justify it in one line, and put both in the
    header. Defaulting to 30 days will silently discard the slow-decaying signals,
    which are often the best ones.
-2. **A resolvable company domain.** It must actually load (see `extraction.md` for
-   the fallback chain before you fail a row on this).
+2. **A resolvable company domain — and it has to be *this* company.** It must
+   load (see `extraction.md` for the fallback chain before you fail a row on
+   this), and the site that answers must be the business the row describes. A
+   200 is not an identity: a recorded run shipped a row whose domain served a
+   French adtech firm while the row described a US grantmaking platform, and
+   another whose domain was a parked for-sale page behind a 114-byte redirect
+   stub. Both would have sent the operator's first email to a stranger.
+
+   One cheap check settles it: the site must mention the business in the terms
+   the evidence used, or name the person. Zero hits for the row's own subject
+   noun means the domain is wrong, not that the site is thin. Watch for a page
+   under ~1KB, a JS-only stub, a registrar or for-sale lander, and a different
+   country or industry. **This bites hardest where the lane gives you a person
+   but no domain** and the domain gets composed from the company name — then the
+   domain is a guess wearing a link, and it must be confirmed like any guess.
 3. **Company size inside the target band.** From the site's team page, the
    registry's own field, or an explicit self-description.
 4. **The derived check from Phase 2.** This is the gate that decides list quality.
@@ -90,6 +103,33 @@ any other reading there — do not fall back to a fetcher for it.
 guessing off one known address, no data broker. A guessed address is not a
 contact — it is a bounce that costs the operator their sending reputation, and
 it makes the row a lie. If the real one cannot be found, say so and drop the tier.
+
+🔴 **Saying a page does NOT contain something costs more than saying it does.**
+"They publish no inbox", "no named individual is attributable", "no email or
+phone anywhere" — these sentences are cheap to write, read as diligence, and
+have been wrong in three separate recorded runs, every time on a page that did
+publish the thing. A positive claim is checked by the one page you read. A
+negative claim is a claim about **every** page, so it needs the page that would
+carry the thing if it existed: `/contact`, `/about`, `/team`, `/leadership`, the
+footer, and the source of the page you are on — an address is often a `mailto`
+href behind a link that reads "Email us", or sits only in JSON-LD, and text
+extraction drops both.
+
+Two habits fix it. **Check the obvious page before denying**, and **describe
+what you saw rather than what you did not**: "the contact page routes to a form"
+is checkable and survives being wrong; "they publish no email" is the sentence
+the reader disproves in one click and then stops trusting the rest of the list.
+
+**Say where the identity came from, not just where the route came from.** The
+`tier` describes how to reach them; it says nothing about how confident you are
+that this person holds this job. Three sources, decreasing strength: the
+company's own page, a registry the company maintains a profile on (a YC company
+page, an ATS job post signed by them), and a third-party directory or org chart
+anyone can edit. **A role that appears on none of the first two is not stated as
+fact** — attribute it ("listed as X on <directory>") or drop the role and keep
+the name. In one run a row carried a title that existed only inside a
+third-party org chart's embedded JSON, and another gave a title the company's
+own team page contradicted.
 
 ## Disqualifiers, mechanical and cheap
 
@@ -245,6 +285,32 @@ operator three different jobs labelled as one.
   nothing. If a vendor-curated quote is the only corpus available, say that the
   corpus is vendor-curated and treat it as weak.
 - **Quote minimally, link always, and record the date you saw it.**
+- 🔴 **An unknown value must never buy a row more than a bad value would.** This
+  is the one that gets past every other rule, because it does not look like a
+  gate failure — it looks like an honest limitation. A row whose date cannot be
+  found is not "timing unknown, fit strong"; it is a row that has walked around
+  gate 1 without being measured. If the real date would have failed the window,
+  the missing date fails it too.
+
+  So before writing "undated", go and look properly. **A page that displays no
+  date usually still carries one**, and it is reachable without a browser:
+  a CMS payload in the source (Contentful, Sanity and the Next.js RSC blob all
+  embed `createdAt` / `updatedAt`), JSON-LD `datePublished`, an Open Graph
+  `article:published_time`, a `<time>` element, the sitemap's `lastmod`, or the
+  feed the page is also published in. In a recorded run, two rows shipped in an
+  "evidence carries no date" group; the source of both held a CMS `createdAt`,
+  and the stories were 14 months and **2.75 years** old against a 120-day window.
+
+  And when a page genuinely has no date anywhere, read the *kind* of page: a
+  vendor case study, a docs page, a customer story is evergreen — written once
+  and left up for years. **Presume it is old, not recent.** Say "no date
+  published, and this kind of page is usually years old" rather than "timing not
+  checkable", which reads to the operator as a coin flip.
+
+  The same asymmetry applies to every other gate. An unknown company size is not
+  inside the band. An unconfirmed employer is not a confirmed one. Where the
+  unknown is worth shipping anyway, ship it in a section that says what is
+  missing and what it would most likely be.
 - **A date is only as precise as the page that gave it.** Platforms that label a
   post "2w" or "1mo" are handing you a range, not a day: render it as one — "30
   to 59 days old, read on <date>" — and never write it as an exact date with a

@@ -202,7 +202,7 @@ payload as well is the most common way to end up with an untitled page.
    chip in `headline.facts` describes how the run was done.
 4. No field contains HTML tags or markdown syntax.
 
-### Content — these four fail loudly, in front of the reader
+### Content — these five fail loudly, in front of the reader
 
 A payload can pass every structural check, render perfectly, and still be wrong
 in the only ways the reader will notice. Structural errors are invisible until
@@ -219,7 +219,17 @@ for free with one click.
    field that makes a promise about the work, so it is the one a reader tests. If
    no gate verified contact routes, `verification` does not say they were all
    read off their own pages.
-8. **Every `evidence.source_url` and `contact.source_url` resolves to the thing
-   it claims.** Deep-link, not a homepage; and any quote trimmed mid-sentence
-   carries a visible ellipsis, so a reader who opens the source finds what they
-   were shown.
+8. **Re-fetch every `evidence.source_url` and `contact.source_url` and confirm a
+   200.** Not "does it look right" — fetch it. This is the last check and it is
+   mechanical on purpose, because the softer version of it ("resolves to the
+   thing it claims") has been read as a judgment call and skipped. Links rot
+   inside a single run: a conference page was repointed to next year's event
+   between harvest and publish, and a contact page cited as having no address
+   was a 404 whose live replacement published three routes. Deep-link rather
+   than land on a homepage, and give any quote trimmed mid-sentence a visible
+   ellipsis, so a reader who opens the source finds what they were shown.
+9. **Every negative claim names the page that would have carried the thing.**
+   "No inbox published", "no named exec", "runs nothing in this category" —
+   each one is a claim about pages you did not read. Check the contact, about,
+   team and footer, look in the page source for `mailto` hrefs and JSON-LD, and
+   prefer describing what is there. See the negative-claim rule in `gates.md`.
