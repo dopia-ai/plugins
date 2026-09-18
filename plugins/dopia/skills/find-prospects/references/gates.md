@@ -65,6 +65,34 @@ writes the message — needs to know:
 | `person_via_company` | A named human, but the only route is a shared inbox or a form. You know who to address; you do not have their line. |
 | `company_only` | No name, but the business publishes a real inbox or contact form of its own. |
 
+🔴 **The tier is computed from the fields, not chosen.** Written as prose these
+three read like a judgment call, and the judgment drifts upward every time: in one
+recorded run **10 of 21 rows** claimed `person_direct` while the only route on the
+row was a `hello@` inbox and a link to the company's page — two of them with no
+name at all. Nothing in the output was false, and the list still overstated what
+it had, because the operator reads that label as "I can write to this person".
+
+Decide it mechanically, in this order:
+
+1. No `name` → `company_only`. No exceptions. A tier that promises a person while
+   the name field is empty is the clearest possible self-contradiction.
+2. A `name`, plus **a route that reaches that person**: an address whose local
+   part is theirs, or their own profile on a platform where a message is normal
+   → `person_direct`.
+3. A `name`, but the only route is shared → `person_via_company`.
+
+Two things are **never** a personal route, however tempting: a generic inbox —
+`hello@`, `info@`, `support@`, `contact@`, `sales@`, `careers@`, `team@`, `admin@`,
+`hi@` — and a company page on a professional network (`/company/…`), which reaches
+whoever runs the account. Both are real routes and belong on the row; they are
+`person_via_company` routes.
+
+The test in one line: **would the named person be the one who opens it?** Where
+the honest answer is "someone will forward it", the tier is
+`person_via_company`. And where a page carries named executives with their own
+addresses — several do, in bio cards in the source — use one of those and earn
+`person_direct` properly, rather than labelling a support inbox as if it were one.
+
 Anything below `company_only` does not ship as a qualified row. Put it in a
 separate "needs a name" section if it is otherwise strong, and say what is
 missing — never silently mix it into the list.
@@ -98,6 +126,22 @@ site and takes one fetch:
 Where a route could not be confirmed either way, keep the row and say so on it.
 On a platform that is browser-only, confirming a profile is browser work like
 any other reading there — do not fall back to a fetcher for it.
+
+🔴 **A form's example text is not an address.** Reading the page source finds
+addresses that text extraction misses — and it also finds strings that are
+shaped exactly like addresses and are not any. The one that has already shipped:
+`placeholder="email@phonely.ai"`, the grey hint inside an empty email input,
+harvested onto a row as the company's contact. It bounces, and it bounces on the
+operator's domain.
+
+So take addresses only from places that assert one: a `mailto:` href, a JSON-LD
+`email` field, or visible body text. **Never from `placeholder`, `value`,
+`aria-label`, `alt`, a `<template>`, a commented-out block, or anything a
+framework renders as sample data.** Two cheap tells, and either is enough to
+reject: the local part is a generic word for the field itself — `email@`,
+`name@`, `you@`, `your.name@`, `example@`, `user@` — or the same string appears
+in a `placeholder` attribute anywhere on the page. When the only candidate looks
+like a sample, the row has no address; say so and drop the tier.
 
 **Never invent an address.** No `first.last@domain` permutations, no pattern
 guessing off one known address, no data broker. A guessed address is not a
@@ -257,6 +301,28 @@ operator three different jobs labelled as one.
 
 ## Evidence discipline
 
+- 🔴 **A claim of being the first or the only one cannot be checked inside the
+  document that makes it.** "Our first PM", "founding", "you'll own this alone" —
+  these are the words a gate often turns on, and they are written to attract a
+  candidate, by someone with no reason to mention the two colleagues already
+  doing it. The claim is about the organisation, so it has to be checked against
+  the organisation's other documents, and they are usually in the same feed you
+  already pulled: **scan the whole board for other roles in the same function
+  before believing the word "first".**
+
+  Two rows shipped in one run without that scan. One was a "Head of Product" ad
+  whose own text said *"Reporting to the Chief Product Officer"* — an existing
+  product executive, so neither first nor alone, and the row's headline claimed
+  "no product team on the board". The other was a genuine first PM for one
+  product line at a company whose same feed already listed a Product Manager,
+  Enterprise. The same run *did* run the scan on other rows — "zero research
+  titles across 42 open roles" — so this is a check applied unevenly rather than
+  one nobody thought of. Apply it to every row that leans on the word, and put
+  what the scan found in the row's facts.
+
+  This generalises past hiring: sole ownership, "the only X in the country", "the
+  first to do Y" are all claims about a population, and a population claim is
+  never evidenced by one member of it.
 - **Every row carries dated, linked evidence, and says which kind it is.** There
   are two kinds and they are not interchangeable:
   - **Words** — the buyer describing the work or the problem: a complaint, a
