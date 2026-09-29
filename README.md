@@ -17,17 +17,23 @@ them afterwards.
 
 ## Install
 
+### Claude — desktop, web and Cowork
+
+Dopia is in Anthropic's directory. **Customize → Plugins → Discover**, search for
+**Dopia**, and press **Add** — or
+[open it in Claude](https://claude.ai/customize/plugins/id/93da9c1a-de4f-40b3-813e-8c1de3abcbd7%40anthropic-plugin-directory).
+Then open the plugin's **Connectors** tab and press **Connect**.
+
 ### Claude Code
+
+Signed in with your Claude account, a plugin you add in the Claude app is in
+Claude Code the next time it starts (2.1.273 or later). On an API key, or from
+the terminal:
 
 ```
 /plugin marketplace add dopia-ai/plugins
 /plugin install dopia@dopia-plugins
 ```
-
-### Claude Desktop, Claude web
-
-Customize → Plugins → Personal → **+** → Add marketplace → `dopia-ai/plugins`, then
-install **Dopia** from the list.
 
 ### Codex CLI
 
@@ -81,13 +87,14 @@ The skill runs on its own and writes a local report. Connecting adds three thing
 | **The people, kept** | Rows can become records — with the quote, its date and its link on them, not just a name and a company. |
 | **It is still there next month** | An artifact outlives the conversation that made it. |
 
-Sign-in is OAuth in your browser. You approve three things in plain words and can
-take any of them back from Settings at any time:
+Sign-in is OAuth in your browser. You approve four things in plain words and can
+take them back from Settings at any time:
 
 - `crm:read` — look up companies, contacts and deals
 - `crm:write` — create and update records
-- `artifacts:write` — publish a finished piece of work as a page. It can create
-  new ones; it cannot read or change the ones you already have.
+- `artifacts:read` — open and list the pages already in your library
+- `artifacts:write` — publish a finished piece of work as a new page. It cannot
+  change the ones you already have.
 
 Dopia never sees a password, and the plugin sends nothing to Dopia unless you ask
 it to.
@@ -110,6 +117,8 @@ it to.
 ```
 plugins/dopia/
 ├── .claude-plugin/plugin.json
+├── README.md                        what the directory listing shows
+├── icon.png
 ├── .mcp.json                        → https://mcp.dopia.ai/mcp?via=plugin
 └── skills/find-prospects/
     ├── SKILL.md
@@ -131,9 +140,11 @@ tool only works for products that happen to share it.
 
 - [Dopia](https://dopia.ai)
 - [The plugin on dopia.ai](https://dopia.ai/features/agentic-platform/plugin) — install for
-  [Claude Code](https://dopia.ai/features/agentic-platform/plugin#claude-code),
-  [Codex](https://dopia.ai/features/agentic-platform/plugin#codex) and
-  [the Claude app](https://dopia.ai/features/agentic-platform/plugin#claude-app)
+  [the Claude app](https://dopia.ai/features/agentic-platform/plugin#claude-app),
+  [Claude Code](https://dopia.ai/features/agentic-platform/plugin#claude-code) and
+  [Codex](https://dopia.ai/features/agentic-platform/plugin#codex)
+- [The full guide](https://dopia.ai/help/integrations/find-prospects-plugin) — install,
+  connect, run, troubleshoot
 - [What Dopia exposes to agents](https://dopia.ai/features/agentic-platform/mcp)
 
 Issues and pull requests welcome.

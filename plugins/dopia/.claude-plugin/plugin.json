@@ -1,12 +1,18 @@
 {
   "name": "dopia",
-  "version": "0.2.11",
+  "displayName": "Dopia",
+  "version": "0.2.12",
   "description": "Find potential buyers who are complaining about their problem, and keep what you find",
   "author": {
     "name": "Dopia",
     "url": "https://dopia.ai"
   },
-  "homepage": "https://dopia.ai/features/agentic-platform",
+  "icon": "./icon.png",
+  "homepage": "https://dopia.ai/features/agentic-platform/plugin",
+  "documentationUrl": "https://dopia.ai/help/integrations/find-prospects-plugin",
+  "supportUrl": "mailto:contact@dopia.ai",
+  "privacyPolicyUrl": "https://dopia.ai/privacy",
+  "termsOfServiceUrl": "https://dopia.ai/terms",
   "repository": "https://github.com/dopia-ai/plugins",
   "license": "MIT",
   "keywords": [
@@ -16,6 +22,8 @@
     "gtm",
     "outbound",
     "revenue",
-    "artifacts"
+    "artifacts",
+    "find-prospects",
+    "lead-research"
   ]
 }
