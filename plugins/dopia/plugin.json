@@ -54,7 +54,7 @@
               "description": "Core use case: build an evidence-backed prospect list from a product URL with the find-prospects skill, then publish it to the connected Dopia workspace as a private page.",
               "prompt": "Find 5 potential customers for dopia.ai who are publicly describing the problem it solves, then publish the list to Dopia.",
               "tools_triggered": "whoami, create_artifact",
-              "expected_behavior": "Says which kinds of public sources it will search, then researches with the host's own web tools. Returns up to five rows, each a named person or business with a quote or dated event, its date, a working source link and a published contact route; rows lacking that evidence are dropped, not invented. Before writing anything it asks once whether to publish; on yes it calls create_artifact and returns the link to a private Dopia page."
+              "expected_behavior": "Says which kinds of public sources it will search, then researches with the host's own web tools. Returns up to five rows, each a named person or business with a quote or dated event, its date, a working source link and a published contact route; rows lacking that evidence are dropped, not invented. Because the prompt already asks to publish, it then calls create_artifact and returns the link to a private Dopia page; without that request it asks once before writing anything."
             },
             {
               "description": "Pipeline summary from the CRM, grouped by deal stage and currency.",
