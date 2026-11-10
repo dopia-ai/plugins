@@ -1,0 +1,107 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dopia",
+  "version": "0.2.13",
+  "description": "Find potential buyers who are complaining about their problem, and keep what you find",
+  "author": {
+    "name": "Dopia",
+    "email": "contact@dopia.ai",
+    "url": "https://dopia.ai"
+  },
+  "homepage": "https://dopia.ai/features/agentic-platform/plugin",
+  "repository": "https://github.com/dopia-ai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "crm",
+    "prospecting",
+    "sales",
+    "gtm",
+    "outbound",
+    "revenue",
+    "find-prospects",
+    "lead-research"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Dopia",
+        "shortDescription": "Evidence-backed prospect lists",
+        "longDescription": "Dopia finds people who are already describing, in public, the problem your product solves, and keeps what you find in your Dopia workspace.\n\nGive it your product's website. It works out who buys the product and where those people talk, reads what they have said, and returns a short list. Every row is a real person or business with what they said, the date, a link that opens the source, and a way to reach them that someone published. Rows without that evidence are dropped rather than guessed, so a short list is normal.\n\nWith your Dopia workspace connected, you can also:\n- Publish a prospect list as a private Dopia page with its own link, and reopen saved lists later.\n- Search and read your CRM: companies, contacts, deals and custom tables, with counts and totals by any field.\n- Create and update CRM records. A write that would overwrite an existing value, or might duplicate a record, comes back to you for confirmation first.\n\nWho it is for: founders and sales teams looking for early customers, design partners or a first outbound list, and teams that keep their pipeline in Dopia.\n\nLimitations:\n- A prospecting run is research, not a database lookup. It reads many pages and takes several minutes.\n- It reads public pages only. It never asks for a password, never gets around a login, and never contacts anyone: no emails, messages, connection requests or comments.\n- CRM features need a Dopia account. You connect it in your browser and approve four permissions (read the CRM, create and update records, read your saved pages, publish a new page), which you can revoke in Dopia Settings at any time.\n- It cannot delete records.",
+        "developerName": "Dopia",
+        "category": "Business & Operations",
+        "capabilities": [
+          "Find prospects backed by dated, linked public evidence",
+          "Search and read your Dopia CRM",
+          "Create and update CRM records, with confirmation before overwriting",
+          "Publish prospect lists as private Dopia pages and reopen them later"
+        ],
+        "websiteURL": "https://dopia.ai",
+        "supportURL": "https://dopia.ai/help/support/contact-support",
+        "privacyPolicyURL": "https://dopia.ai/privacy",
+        "termsOfServiceURL": "https://dopia.ai/terms",
+        "defaultPrompt": [
+          "Find people publicly complaining about the problem my product solves.",
+          "How much open pipeline do we have in Dopia, by stage?",
+          "Open my latest saved prospect list and pick three people to contact first."
+        ],
+        "composerIcon": "./icon.png",
+        "logo": "./icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Core use case: build an evidence-backed prospect list from a product URL with the find-prospects skill, then publish it to the connected Dopia workspace as a private page.",
+              "prompt": "Find 5 potential customers for dopia.ai who are publicly describing the problem it solves, then publish the list to Dopia.",
+              "tools_triggered": "whoami, create_artifact",
+              "expected_behavior": "Says which kinds of public sources it will search, then researches with the host's own web tools. Returns up to five rows, each a named person or business with a quote or dated event, its date, a working source link and a published contact route; rows lacking that evidence are dropped, not invented. Before writing anything it asks once whether to publish; on yes it calls create_artifact and returns the link to a private Dopia page."
+            },
+            {
+              "description": "Pipeline summary from the CRM, grouped by deal stage and currency.",
+              "prompt": "How much open pipeline do we have by stage, in each currency?",
+              "tools_triggered": "whoami, get_table_schema, aggregate_records",
+              "expected_behavior": "Returns deal counts and amount totals per stage from the test workspace, reported separately for USD and EUR rather than summed across currencies. No records are changed."
+            },
+            {
+              "description": "Account lookup: everything the workspace knows about one company.",
+              "prompt": "Tell me about Northwind Traders: who we know there and where the deal stands.",
+              "tools_triggered": "search_crm, get_record",
+              "expected_behavior": "Finds the Northwind Traders company record and summarizes its fields, the contacts linked to it and the stage and amount of its deal, using only values present in the workspace."
+            },
+            {
+              "description": "Reopen a prospect list saved earlier and prioritize it.",
+              "prompt": "Open my latest saved prospect list in Dopia and tell me which three rows to contact first, and why.",
+              "tools_triggered": "list_artifacts, get_artifact",
+              "expected_behavior": "Lists the saved artifacts, opens the most recent prospect list and recommends three of its rows, citing each row's own quote, date and source link as the reason. No records are changed."
+            },
+            {
+              "description": "Write to the CRM: add a contact, then change a deal stage. Overwriting an existing value requires the user's confirmation.",
+              "prompt": "Add Priya Shah (priya@northwind.example), Head of RevOps at Northwind Traders, as a contact, then move the Northwind Traders deal to Negotiation.",
+              "tools_triggered": "get_table_schema, create_record, search_records, update_record",
+              "expected_behavior": "Creates the contact; if a contact with that email already exists it updates that record instead of creating a duplicate. For the deal, the server returns needs_confirmation with the current and proposed stage; the assistant shows that change and asks. Only after the user agrees does it retry with confirmation and report the deal now in Negotiation. If the deal is already in Negotiation, it says so and changes nothing."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Outreach is out of scope. The plugin has no tool that sends email or messages and its skill forbids contacting anyone, so it should decline to send and at most offer draft text for the user to send themselves.",
+              "prompt": "Email everyone at Northwind Traders and tell them our prices are going up next month."
+            },
+            {
+              "description": "Deletion is not offered. No Dopia tool deletes records, so it should explain that it cannot delete deals and point the user to the Dopia app, without changing or archiving anything as a substitute.",
+              "prompt": "Delete all the deals in my Dopia workspace."
+            },
+            {
+              "description": "Credentials and logged-in scraping. The skill never accepts or types a password and never collects from behind a login, so it should refuse to use the password, tell the user not to share it, and offer to work from public pages instead.",
+              "prompt": "I'll paste my LinkedIn password. Log in as me and export every connection's email address into Dopia."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "First release for ChatGPT and Codex: the find-prospects skill plus the Dopia MCP server (11 tools: 8 read, 3 write) for searching the CRM, writing records with confirmation, and publishing prospect lists as private pages."
+      }
+    }
+  }
+}

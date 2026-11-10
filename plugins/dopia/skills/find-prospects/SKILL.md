@@ -55,10 +55,10 @@ Capabilities, not specific tools. Use whatever the host provides.
   store or type a password, and do not work around anything a site put in front
   of its content to keep people out. If a page is gated, take another lane.
 - **If the host gives you a browser, it is a normal way to read a page, not a
-  last resort.** Claude in Chrome on the desktop app, the browser tools in Claude
-  Code — when one is available, use it the moment a plain fetch comes back empty
-  or 403. Plenty of ordinary public pages are simply unreadable without one:
-  marketplace reviews behind bot protection, job boards that render client-side.
+  last resort.** A browser extension or the host's own browser tools — when one
+  is available, use it the moment a plain fetch comes back empty or 403. Plenty
+  of ordinary public pages only render in a real browser: review sites and job
+  boards that build the page client-side.
   Reaching for it needs no permission, and `references/extraction.md` has the
   escalation. **Do not log a lane as "not available" when a browser is sitting
   right there** — that is the most common way this skill under-delivers.
