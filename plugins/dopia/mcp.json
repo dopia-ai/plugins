@@ -3,17 +3,7 @@
   "mcpServers": {
     "Dopia": {
       "type": "streamable-http",
-      "url": "https://mcp.dopia.ai/mcp?via=plugin",
-      "extensions": {
-        "com.openai": {
-          "auth": {
-            "type": "oauth",
-            "client": {
-              "mode": "dcr"
-            }
-          }
-        }
-      }
+      "url": "https://mcp.dopia.ai/mcp?via=plugin"
     }
   }
 }
