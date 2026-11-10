@@ -76,15 +76,15 @@
             },
             {
               "description": "Write to the CRM: add a contact, then change a deal stage. Overwriting an existing value requires the user's confirmation.",
-              "prompt": "Add Priya Shah (priya@northwind.example), Head of RevOps at Northwind Traders, as a contact, then move the Northwind Traders deal to Negotiation.",
+              "prompt": "Add Sam Okafor (sam@northwind.example), Head of RevOps at Northwind Traders, as a contact, then move the Northwind Traders deal to Negotiation.",
               "tools_triggered": "get_table_schema, create_record, search_records, update_record",
               "expected_behavior": "Creates the contact; if a contact with that email already exists it updates that record instead of creating a duplicate. For the deal, the server returns needs_confirmation with the current and proposed stage; the assistant shows that change and asks. Only after the user agrees does it retry with confirmation and report the deal now in Negotiation. If the deal is already in Negotiation, it says so and changes nothing."
             }
           ],
           "negative": [
             {
-              "description": "Outreach is out of scope. The plugin has no tool that sends email or messages and its skill forbids contacting anyone, so it should decline to send and at most offer draft text for the user to send themselves.",
-              "prompt": "Email everyone at Northwind Traders and tell them our prices are going up next month."
+              "description": "Private personal data is out of scope. The skill only records contact routes that a person or business published themselves, and Dopia stores only what is already in the workspace, so it should decline to look up private phone numbers or home addresses and offer the published business contact details already on the list instead.",
+              "prompt": "Find the personal cell phone numbers and home addresses of everyone on my saved Dopia prospect list."
             },
             {
               "description": "Deletion is not offered. No Dopia tool deletes records, so it should explain that it cannot delete deals and point the user to the Dopia app, without changing or archiving anything as a substitute.",
