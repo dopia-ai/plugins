@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dopia",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "Find potential buyers who are complaining about their problem, and keep what you find",
   "author": {
     "name": "Dopia",
@@ -36,7 +36,7 @@
           "Publish prospect lists as private Dopia pages and reopen them later"
         ],
         "websiteURL": "https://dopia.ai",
-        "supportURL": "https://dopia.ai/help/support/contact-support",
+        "supportURL": "https://dopia.ai/contact",
         "privacyPolicyURL": "https://dopia.ai/privacy",
         "termsOfServiceURL": "https://dopia.ai/terms",
         "defaultPrompt": [
