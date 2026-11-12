@@ -75,6 +75,40 @@ fourteen rows shipped were agencies selling requirements-to-agent-instructions a
 their own billable line. One competitor run through the check in Phase 2 would
 have caught it before a single search.
 
+## The subject's own limits are read, not derived
+
+The note above is about gate 4: do not let price stand in for whether the value
+lands. It is not licence to ignore what the subject itself says it will and will
+not take. A minimum on its intake form, a licence that names where it may
+operate, a paid tier that starts where the free edition stops — these are facts
+on the page. They set gate 3's band, and a row outside them is a customer the
+subject cannot take. The difference is direction: a threshold you invent
+guesses who can afford the product; a limit the subject publishes tells you who
+it will serve.
+
+Check what you read the same way as the chain: every customer on the subject's
+own list should clear the hard limits. One that does not means a soft limit was
+read as hard.
+
+## When customers arrive through someone else
+
+Where Phase 1 found introducers, run the chain again from their side. The value
+is not the product's value. It is what sending a client here does for the
+introducer: a better result for their client, a fee, their own deal closing
+sooner. Then condition, proxy and check as before, and a negative half. An
+introducer already sending clients to a named competitor is a displacement row,
+not a zero; one who does the subject's own work is a peer, and gate 7 removes
+them.
+
+- **A custom-joinery workshop whose testimonials are signed by interior
+  designers.** Value to the designer: the cabinetry in their client's project
+  arrives on time and as drawn. Condition: they currently specify built-ins in
+  residential projects inside the area the workshop serves. Proxy: a portfolio
+  with recent projects there. Check: dated project pages naming the location.
+
+Introducers are a separate group in the output, after the buyers, because the
+conversation is a different one: a referral arrangement, not a purchase.
+
 ## A derived gate needs a negative half
 
 The chain above produces a check for **who has the problem**. On its own that

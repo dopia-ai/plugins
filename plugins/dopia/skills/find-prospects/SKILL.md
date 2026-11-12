@@ -18,6 +18,14 @@ described the problem well, not a company that merely fits the shape — someone
 whose money could end up in the operator's account. That is the entire value
 delivered, so it is the entire basis for judging the output.
 
+Two things follow from it that are easy to skip. **Could pay means could pay at
+the subject's own prices and on its own terms** — someone the subject's
+published limits exclude, or whose whole need its free option already covers,
+is not a buyer however well they describe the problem. And **where the site
+shows that customers arrive through someone else**, the person who sends them is
+how that money arrives, so they are worth finding by the same standard — in a
+group of their own, never mixed in with the buyers.
+
 Two consequences run through every phase below. **A competitor is worth less than
 nothing** — their probability is zero and their presence makes the operator
 distrust every other row, so no quality of evidence rescues one. And **how likely
@@ -95,6 +103,33 @@ From the URL: the outcome sold, who signs versus who uses, the buying motion
 visible on the page, the geography, the strongest use case. Read the pricing page
 and the docs if they exist.
 
+**Read the subject's own limits, because they draw the edge of who can buy.**
+Every seller publishes some: what each paid tier is built for (its usage cap,
+its seat count, the size of customer it names), a minimum the intake form asks
+for, who is eligible, where it is allowed or able to operate, what its customers
+must already run. Write each one down with the page it came from, and mark it
+hard or soft. A **hard** limit is one the subject enforces — a required minimum
+on a form, "we do not accept", a licence that names where it may operate. A
+**soft** one describes who usually buys — "ideal for", "most of our clients".
+Hard limits set gate 3's band, and a row outside one is out. Soft limits only
+order the list.
+
+Then work out **the smallest customer the cheapest paid option is for**. Where
+the product has a free tier, a free self-hosted edition or a trial that never
+ends, the people whose whole need that covers are its audience and not the
+list's: the band starts where a paid option is the one that fits. Where the site
+states none of this, write that the band is inferred, and from what.
+
+**Read how customers reach the subject, as well as who pays.** Some businesses
+are sent most of their customers by someone who never pays them: an adviser who
+recommends, an agent who introduces, a partner who resells or installs. The site
+says so when it is true — a referral or partner programme, a page addressed to
+the people who refer, testimonials written by them rather than by customers, a
+portal for them to log in to. When it does, those introducers are a second
+population, and Phase 2 derives a gate for them too. **When the site shows
+nothing of the kind there is no second list** — do not supply one from what you
+know about the industry.
+
 **Read the customer list too — the logo wall, the case studies, the
 testimonials.** The pattern in it is the most reliable thing Phase 1 produces:
 it is who actually buys, against which your ICP hypotheses are a guess. It also
@@ -133,9 +168,19 @@ Read `references/derivation.md` and follow the chain:
 `product value → what must be true of a company for that value to land → the
 publicly observable proxy for that condition → the cheapest check for that proxy`
 
-This phase outputs **the content of gate 4**. Gates 1-3 and 5-7 are fixed; gate 4
-is always derived, and it is the gate that decides whether the list is any good.
-Write the derived chain into the report header so the operator can argue with it.
+This phase outputs **the content of gate 4**. Gates 1, 2 and 5-7 are fixed. Gate 3
+is fixed in form, and its band is the one Phase 1 read off the subject's own
+limits. Gate 4 is always derived, and it is the gate that decides whether the
+list is any good. Write the derived chain into the report header so the operator
+can argue with it.
+
+Where Phase 1 found that customers arrive through introducers, run the chain a
+second time from their side: what sending a client here does for the
+introducer, what must be true of an introducer for that to land, the proxy, the
+check. Introducer rows then pass every other gate exactly as buyer rows do —
+dated evidence, a verified domain, a route to a person — and gate 7 still bites:
+an introducer who does the subject's own work is a competitor, not a partner.
+`references/derivation.md` has the details.
 
 ## Phase 3 — Derive the channels, and classify each
 
@@ -201,6 +246,23 @@ threshold and cannot see what you removed. Cutting a real buyer for being a long
 shot is the quieter half of padding, and it costs them a customer rather than an
 email.
 
+Two things are category, not probability. **A row outside a hard limit** from
+Phase 1 is someone the subject would turn away, so it goes. And **a row whose own
+words say they will not pay for this kind of thing** — they chose the free
+option, a self-hosted edition or a spreadsheet, and gave the price as the reason
+— carries evidence against buying, not for it. Its quote belongs in the corpus
+as an objection, and the row does not ship.
+
+**Then check the list against who actually pays.** People who talk in public
+skew small — the individual, the side project, the newest firm — so an
+evidence-first harvest drifts toward the vocal end of a market rather than the
+paying end. Lay the surviving rows against the paid tiers and the customer list
+from Phase 1. If most rows sit at or below the cheapest paid option while the
+customers sit well above it, the lanes found the wrong end. Go back to Phase 3
+for lanes where the paying segment leaves a record — registries, filings, job
+posts, directories of firms that size — or, if the budget is spent, say in the
+header what the list skews toward and why.
+
 **Gate 8 is the one that decides whether this was useful.** A row has to carry a
 route to a human: a named person with their own profile or published address, or
 failing that a real inbox or form the business publishes itself. A company domain
@@ -218,8 +280,10 @@ put it in a short "needs a name" section instead and say what is missing.
 
 Write `prospects-<date>.md` containing:
 
-1. **Header** — the product read, both ICP hypotheses, the derived chain and gate 4
-   verbatim, and the platform-terms note.
+1. **Header** — the product read, both ICP hypotheses, the subject's limits with
+   the band they set and the page each came from, the derived chain and gate 4
+   verbatim (and the introducer chain, if there is one), and the platform-terms
+   note.
 2. **The list** — per person: name, profile link, company, domain, **how to reach
    them and which page that was read off**, the evidence and whether it is the
    buyer's words or a dated event, its date, its link, the lane, the six scores,
@@ -230,8 +294,14 @@ Write `prospects-<date>.md` containing:
    **Order by purchase likelihood first, then by the axis the operator has least
    visibility into.** They are paying for reach past what they can already see,
    but they are paying for it in order to find someone who will buy — so a group
-   nobody will buy from does not lead just because it was hard to find. Evidence in the buyer's own words leads events either way,
+   nobody will buy from does not lead just because it was hard to find. Where
+   rows would buy at clearly different sizes, likelihood and size order the list
+   together: a row likely to take the cheapest paid tier does not lead one a
+   little less likely to buy at ten times that. Put on each row the tier or deal
+   size you expect and what on the page you read it from. Evidence in the buyer's own words leads events either way,
    and existing-customer rows are a different conversation, so they group apart.
+   So are introducer rows: they are asked for referrals, not a purchase, and
+   they come after the buyers.
    Beyond that the axis depends on the subject:
 
    - Where Phase 1 found evidence of a concentrated home market, that is the

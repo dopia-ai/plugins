@@ -27,8 +27,14 @@ short honest list is the product, a padded one is the thing we are replacing.
    country or industry. **This bites hardest where the lane gives you a person
    but no domain** and the domain gets composed from the company name — then the
    domain is a guess wearing a link, and it must be confirmed like any guess.
-3. **Company size inside the target band.** From the site's team page, the
-   registry's own field, or an explicit self-description.
+3. **Inside the band the subject's own limits set.** Phase 1 read them off the
+   site. Hard limits — a required minimum, who is eligible, where the subject
+   may operate, what its customers must already run — define the band, and a
+   row outside one is out however strong its evidence, because the subject
+   would turn it away. Read the row's side of it from the row's team page, a
+   registry's own field, a filing, or an explicit self-description. Soft limits
+   ("ideal for", "most of our clients") do not gate; they feed purchase
+   likelihood.
 4. **The derived check from Phase 2.** This is the gate that decides list quality.
    It is different for every product. Write it into the output header verbatim so
    the operator can see what was applied.
@@ -231,7 +237,8 @@ Two different jobs get confused here, and only one of them is yours.
 
 **Yours is the category question**: could this entity ever be a customer? That is
 binary and you own it. A peer, a company already on the subject's customer list,
-a business in a vertical the product cannot serve — zero, cut, no appeal.
+a business in a vertical the product cannot serve, anyone outside a hard limit
+the subject publishes — zero, cut, no appeal.
 
 **Theirs is the threshold question**: how likely is likely enough to be worth a
 message? That belongs to the operator, and it depends on facts you do not have —
@@ -265,7 +272,10 @@ number — a blended score hides which axis is weak.
   page shows about their budget, who the named person is, and what they have
   already spent on this problem. Five axes of pristine evidence about a company
   that will never buy still scores zero here, and this is the axis the list is
-  ordered by.
+  ordered by. Score it with a size attached: name the tier or deal size the row
+  would most likely buy, read from the subject's pricing against what the row
+  shows of its own scale. Where sizes differ widely across the list, the order
+  weighs both.
 - **Signal strength** — asking for help publicly beats announcing an event, which
   beats passive engagement.
 - **Recency** — inside 7 days beats inside 30.
@@ -295,6 +305,11 @@ conversations:
   is still open and they have already shown they will pay to fix it.
 - **Left the category entirely** — they have to be re-convinced the category works
   at all before anything else, so the conversation starts a step earlier.
+- **Said they will not pay for it** — chose the free option, a self-hosted
+  edition, a spreadsheet or doing it by hand, and gave the price as the reason.
+  That is a dated signal *against* buying. It goes in the corpus as an objection
+  in the buyer's own words, not in the list. Keep it apart from "built it
+  in-house", which is spending real effort because the pain is expensive.
 
 Put the state on every row. A list that does not distinguish these hands the
 operator three different jobs labelled as one.
@@ -417,6 +432,8 @@ operator three different jobs labelled as one.
 | contact source | the page the route was read off, so it can be checked |
 | lane | which channel and which query |
 | gate 4 result | what was found and where |
+| group | buyer, existing customer, or introducer |
+| likely size | the tier or deal size this row would most likely buy, and what it was read from |
 | score | six axes, separately; purchase likelihood first |
 | why now | one sentence, grounded only in the quote |
 
