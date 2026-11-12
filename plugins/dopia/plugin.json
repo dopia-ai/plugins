@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dopia",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Find potential buyers who are complaining about their problem, and keep what you find",
   "author": {
     "name": "Dopia",
